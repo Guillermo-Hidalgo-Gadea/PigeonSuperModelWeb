@@ -1,0 +1,751 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dataset &#8212; Pigeon Super Model</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/icon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Models" href="Models.html" />
+    <link rel="prev" title="Welcome" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/PigeonSuperModel.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Pigeon Super Model</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Dataset
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Models.html">
+   Models
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Tutorial.html">
+   Tutorial
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="DeepLabCut.html">
+     DeepLabCut
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="SLEAP.html">
+     SLEAP
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel">
+   GitLab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel/-/releases">
+   Releases
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="GetInTouch.html">
+   Get in Touch
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Dataset.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel/issues/new?title=Issue%20on%20page%20%2FDataset.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#different-setups">
+   Different Setups
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#experiment-1">
+     Experiment 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#experiment-2">
+     Experiment 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#experiment-3">
+     Experiment 3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#experiment-4">
+     Experiment 4
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#labeled-skeleton">
+   Labeled Skeleton
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Dataset</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#different-setups">
+   Different Setups
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#experiment-1">
+     Experiment 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#experiment-2">
+     Experiment 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#experiment-3">
+     Experiment 3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#experiment-4">
+     Experiment 4
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#labeled-skeleton">
+   Labeled Skeleton
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="dataset">
+<h1>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h1>
+<p>The Pigeon Super Model is based on a multi-view dataset of 1151 manually labeled video frames depicting various pigeons in different experimental setups. It was originally intended to train neural networks for video based markerless pose tracking in pigeons. It is especially balanced to generalize well to new subjects, new videos and even unseen experimental setups. The different frames were extracted from multiple views and can thus be used for post-hoc 3D reconstruction in calibrated multi-camera setups.</p>
+<p><img alt="Cover" src="_images/Fig_1.jpg" /></p>
+<p>Below is a summary of the dataset’s main characteristics:</p>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><th class="stub"><p>Number of Videos</p></th>
+<td><p>190</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Camera Angles Total</p></th>
+<td><p>20</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Different Pigeons</p></th>
+<td><p>23</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Frames</p></th>
+<td><p>1151</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Image size</p></th>
+<td><p>1280 x 960; 1920 x 1080; 1440 x 1080</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>FPS</p></th>
+<td><p>20; 120; 60; 75</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Number of Keypoints</p></th>
+<td><p>39</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Download</p></th>
+<td><p><a class="reference external" href="https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel/-/tree/main/dataset">PigeonSuperModel/Dataset</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="different-setups">
+<h2>Different Setups<a class="headerlink" href="#different-setups" title="Permalink to this headline">¶</a></h2>
+<p>So far, only pigeons filmed in laboratory settings are included. <a class="reference internal" href="GetInTouch.html"><span class="doc std std-doc">Get in touch</span></a> to contribute!
+The original videos come from 4 different experiments conducted in the Biopsychology Lab at the Ruhr University Bochum.</p>
+<div class="section" id="experiment-1">
+<h3>Experiment 1<a class="headerlink" href="#experiment-1" title="Permalink to this headline">¶</a></h3>
+<p><img alt="Exp1" src="_images/Exp_1.jpg" /></p>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><th class="stub"><p>Description</p></th>
+<td><p>The pigeons are feeding and moving inside an experimental cage. The videos are taken through a mesh in a frontal view and from above.</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Videos</p></th>
+<td><p>48</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Cameras</p></th>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Pigeons</p></th>
+<td><p>8</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Frames</p></th>
+<td><p>240</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Image size</p></th>
+<td><p>1280 x 960; 1920 x 1080</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>FPS</p></th>
+<td><p>20; 120</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Credit</p></th>
+<td><p><a class="reference external" href="https://www.ruhr-uni-bochum.de/biopsy/members_neslihan.html">Neslihan Wittek</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="experiment-2">
+<h3>Experiment 2<a class="headerlink" href="#experiment-2" title="Permalink to this headline">¶</a></h3>
+<p><img alt="Exp2" src="_images/Exp_2.jpg" /></p>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><th class="stub"><p>Description</p></th>
+<td><p>The pigeons are moving freely inside a 2m x 2m hexagonal arena and occasionally interacting with feeders on the walls. The videos are filmed from six different perspectives with cameras mounted on the upper side walls of the arena.</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Videos</p></th>
+<td><p>48</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Cameras</p></th>
+<td><p>6</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Pigeons</p></th>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Frames</p></th>
+<td><p>330</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Image size</p></th>
+<td><p>1440 x 1080</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>FPS</p></th>
+<td><p>75</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Credit</p></th>
+<td><p><a class="reference external" href="https://www.ruhr-uni-bochum.de/biopsy/members_noemi.html">Noemi Rook</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="experiment-3">
+<h3>Experiment 3<a class="headerlink" href="#experiment-3" title="Permalink to this headline">¶</a></h3>
+<p><img alt="Exp3" src="_images/Exp_3.jpg" /></p>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><th class="stub"><p>Description</p></th>
+<td><p>The pigeons peck at different keys in a Skinner box. The cameras are attached to the upper front wall, capturing the inside of the box from above.</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Videos</p></th>
+<td><p>48</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Cameras</p></th>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Pigeons</p></th>
+<td><p>5</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Frames</p></th>
+<td><p>291</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Image size</p></th>
+<td><p>1920 x 1080</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>FPS</p></th>
+<td><p>60</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Credit</p></th>
+<td><p><a class="reference external" href="https://www.ruhr-uni-bochum.de/biopsy/members_john.html">John Michael Tuff</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="experiment-4">
+<h3>Experiment 4<a class="headerlink" href="#experiment-4" title="Permalink to this headline">¶</a></h3>
+<p><img alt="Exp4" src="_images/Exp_4.jpg" /></p>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><th class="stub"><p>Description</p></th>
+<td><p>Short snippets of pigeons moving around inside a Skinner box with transparent side walls. The videos are taken from 8 different perspectives with some cameras attached to the floor of the box and some mounted to the side walls.</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Videos</p></th>
+<td><p>46</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Cameras</p></th>
+<td><p>8</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Pigeons</p></th>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Frames</p></th>
+<td><p>290</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Image size</p></th>
+<td><p>1440 x 1080</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>FPS</p></th>
+<td><p>75</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Credit</p></th>
+<td><p><a class="reference external" href="https://www.ruhr-uni-bochum.de/biopsy/members_semih.html">Celil Semih Sevincik</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="labeled-skeleton">
+<h2>Labeled Skeleton<a class="headerlink" href="#labeled-skeleton" title="Permalink to this headline">¶</a></h2>
+<p>Our skeleton consists of 39 keypoints, distributed across different sections of the pigeon’s body.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Keypoint</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>US(UpperSpine=LN)</p></td>
+<td><p>Uppermost point of the spine (transition from spine to neck section), between the shoulder blades.</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>LS(LowerSpine)</p></td>
+<td><p>Root of the long tail feathers.</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>MS(MiddleSpine)</p></td>
+<td><p>Center point of the spine.</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>UHS(UpperHalfSpine)</p></td>
+<td><p>Middle point of the upper half of the spine section.</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>LHS(LowerHalfSpine)</p></td>
+<td><p>Middle point of the lower half of the spine section.</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>TL(TailLeft)</p></td>
+<td><p>Outermost edge of the left side rounding of the tail feathers (if the tail feathers are spread apart, the left feather is labeled).</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>TR(TailRight)</p></td>
+<td><p>Outermost edge of the left side rounding of the tail feathers (if the tail feathers are spread apart, the left feather is labeled).</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>TC(TailCenter)</p></td>
+<td><p>Rear end of the middle tail feather.</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>LWS(LeftWingShoulder)</p></td>
+<td><p>Region where the left wing is connected to the body (this label may slightly vary across the manually labeled images since the actual joint is covered by the bird’s plumage).</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>LWE(LeftWingElbow)</p></td>
+<td><p>Most frontal point of the left wing (when the wing is flat against the body).</p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td><p>LWW(LeftWingWrist</p></td>
+<td><p>Transition from wing bone to left wing feathers.</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p>LWT(LeftWingTip)</p></td>
+<td><p>Rear end of the left wing’s longest feather.</p></td>
+</tr>
+<tr class="row-even"><td><p>13</p></td>
+<td><p>RWS(RightWingShoulder)</p></td>
+<td><p>Region where the right wing is connected to the body (this label may slightly vary across the manually labeled images since the actual joint is covered by the bird’s plumage).</p></td>
+</tr>
+<tr class="row-odd"><td><p>14</p></td>
+<td><p>RWE(RightWingElbow)</p></td>
+<td><p>Most frontal point of the right wing (when the wing is flat against the body).</p></td>
+</tr>
+<tr class="row-even"><td><p>15</p></td>
+<td><p>RWW(RightWingWrist)</p></td>
+<td><p>Transition from wing bone to right wing feathers.</p></td>
+</tr>
+<tr class="row-odd"><td><p>16</p></td>
+<td><p>RWT(RightWingTip)</p></td>
+<td><p>Rear end of the right wing’s longest feather.</p></td>
+</tr>
+<tr class="row-even"><td><p>17</p></td>
+<td><p>H(Head)</p></td>
+<td><p>Top of the skull, centered on an imaginary line between the eyes.</p></td>
+</tr>
+<tr class="row-odd"><td><p>18</p></td>
+<td><p>UC(UpperCere)</p></td>
+<td><p>Upper end of the cere, centered between the two halves.</p></td>
+</tr>
+<tr class="row-even"><td><p>19</p></td>
+<td><p>LC(LowerCere)</p></td>
+<td><p>Lower end of the cere.</p></td>
+</tr>
+<tr class="row-odd"><td><p>20</p></td>
+<td><p>BT(BeakTip)</p></td>
+<td><p>Tip of the beak.</p></td>
+</tr>
+<tr class="row-even"><td><p>21</p></td>
+<td><p>LE(LeftEye)</p></td>
+<td><p>Left eye (centered between the eyelids).</p></td>
+</tr>
+<tr class="row-odd"><td><p>22</p></td>
+<td><p>RE(RightEye)</p></td>
+<td><p>Right eye (centered between the eyelids).</p></td>
+</tr>
+<tr class="row-even"><td><p>23</p></td>
+<td><p>UN(UpperNeck)</p></td>
+<td><p>Highest point of the neck, just below the beginning of the cranium.</p></td>
+</tr>
+<tr class="row-odd"><td><p>24</p></td>
+<td><p>MN(MiddleNeck)</p></td>
+<td><p>Center point of the neck.</p></td>
+</tr>
+<tr class="row-even"><td><p>25</p></td>
+<td><p>UHN(UpperHalfNeck)</p></td>
+<td><p>Middle point of the upper half of the neck section.</p></td>
+</tr>
+<tr class="row-odd"><td><p>26</p></td>
+<td><p>LHN(LowerHalfNeck)</p></td>
+<td><p>Middle point of the lower half of the neck section.</p></td>
+</tr>
+<tr class="row-even"><td><p>27</p></td>
+<td><p>LC(LeftChest)</p></td>
+<td><p>Outer visible side of the left pectoral muscle (close to left ‘elbow’ label).</p></td>
+</tr>
+<tr class="row-odd"><td><p>28</p></td>
+<td><p>RC(RightChest)</p></td>
+<td><p>Outer visible side of the right pectoral muscle (close to right ‘elbow’ label).</p></td>
+</tr>
+<tr class="row-even"><td><p>29</p></td>
+<td><p>MC(MiddleChest)</p></td>
+<td><p>Center point of the chest section.</p></td>
+</tr>
+<tr class="row-odd"><td><p>30</p></td>
+<td><p>LHC(LeftHalfChest)</p></td>
+<td><p>Middle point of the left half of the chest section.</p></td>
+</tr>
+<tr class="row-even"><td><p>31</p></td>
+<td><p>RHC(RightHalfChest)</p></td>
+<td><p>Middle point of the right half of the chest section.</p></td>
+</tr>
+<tr class="row-odd"><td><p>32</p></td>
+<td><p>C(Chin)</p></td>
+<td><p>Underside of the beak, where it merges into the throat.</p></td>
+</tr>
+<tr class="row-even"><td><p>33</p></td>
+<td><p>MT(MiddleThroat)</p></td>
+<td><p>Center of the throat.</p></td>
+</tr>
+<tr class="row-odd"><td><p>34</p></td>
+<td><p>LT(LeftTibia)</p></td>
+<td><p>Feathered tigh of the left leg.</p></td>
+</tr>
+<tr class="row-even"><td><p>35</p></td>
+<td><p>LA(LeftAnkle)</p></td>
+<td><p>Centered on the featherless lower part of the left leg.</p></td>
+</tr>
+<tr class="row-odd"><td><p>36</p></td>
+<td><p>LF(LeftFoot)</p></td>
+<td><p>Middle claw of the left foot, close to the ankle.</p></td>
+</tr>
+<tr class="row-even"><td><p>37</p></td>
+<td><p>RT(RightTibia)</p></td>
+<td><p>Feathered tigh of the right leg.</p></td>
+</tr>
+<tr class="row-odd"><td><p>38</p></td>
+<td><p>RA(RightAnkle)</p></td>
+<td><p>Centered on the featherless lower part of the right leg.</p></td>
+</tr>
+<tr class="row-even"><td><p>39</p></td>
+<td><p>RF(RightFoot)</p></td>
+<td><p>Middle claw of the right foot, close to the ankle.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Welcome</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Models.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Models</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Guillermo Hidalgo Gadea & Sarah C. Möser, IKN, Ruhr-University Bochum<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
