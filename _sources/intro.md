@@ -1,15 +1,15 @@
 # Welcome
 
-![Cover](Figures/Fig_1.jpg)
-
 ````{margin}
 ```{admonition} Hi there!
 :class: seealso
-This is the PigeonSuperModel website as a jupyter book. You can navigate it like a regular website and download individual pages as .pdf, .md, or .ipynb, when needed.
+This is the jupyterBook documentation of the PigeonSuperModel. You can navigate it like a regular website and download individual pages as .pdf, .md, or .ipynb, when needed.
 
 Click the menu icon on the left to toggle the navigation bar and use the search bar to lookup keywords. You can also click yourself through the different pages with the arrows at the bottom, or use the icons on the top right to access our GitLab repository.
 ```
 ````
+
+![Cover](Figures/Fig_1.jpg)
 
 The PigeonSuperModel is an open source implementation of multiple pre-trained deep-learning models for markerless pose tracking in pigeons. We provide pre-trained weights for different ResNet and UNet models to be used in [DeepLabCut](https://deeplabcut.github.io/DeepLabCut) and [SLEAP](https://sleap.ai/), as well as a manually labeled dataset with 1151 frames to train and evaluate further models.
 
