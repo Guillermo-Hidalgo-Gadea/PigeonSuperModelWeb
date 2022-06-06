@@ -1,0 +1,24 @@
+- intro
+    - mention the option to contribute? --> Get in touch to contribute.
+
+
+- Models:
+    - charts with evaluation results
+    - description
+    - performance
+    - final recommendation
+- Tutorial:
+    - Short paragraph
+    - Still need to structure this part (e.g. what's the content of the tutorials?!)
+- DeeplabCut:
+    - Structure this part:
+        - Using the PSM from the DLC model zoo
+            * Monkey Patch
+            * official implementation
+        - Using the exported DLC Models
+
+- optional:
+    - intro: Process chart
+    - Dataset: add *labeled* frames
+    - Is there a way to remove "Powered by Jupyter Book" from the menu?
+    - Design some new graphics as headers for "Get in Touch" and the landing page.
