@@ -14,7 +14,7 @@ We make our dataset openly available with 1151 manually labeled video frames of 
 
 ## Dataset
 
-The dataset we provide consists of 1151 manually labeled frames from 4 different experiments and depicts single animals in various poses captured in different experimental setups. It is especially well balanced to generalize to new videos. We originally designed it to train neural networks (e.g. using DeepLabCut or SLEAP) for video analysis via markerless pose estimation in pigeons. It can also be used for 3D pose reconstruction in multi-camera setups using e.g., [Anipose](https://anipose.readthedocs.io/en/latest/index.html)). [Read more](Dataset.md).
+The dataset we provide consists of 1151 manually labeled frames from 4 different experiments and depicts single animals in various poses captured in different experimental setups. It is especially well balanced to generalize to new videos. We originally designed it to train neural networks (e.g. using DeepLabCut or SLEAP) for video analysis via markerless pose estimation in pigeons. It can also be used for 3D pose reconstruction in multi-camera setups using e.g., [Anipose](https://anipose.readthedocs.io/en/latest/index.html). [Read more](Dataset.md).
 
 ## Models
 
