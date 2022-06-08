@@ -1,5 +1,9 @@
 # Welcome
 
+![Cover](Figures/Fig_1.jpg)
+
+The PigeonSuperModel is an open source repository of multiple pre-trained deep-learning models for markerless pose tracking in pigeons. We provide pre-trained weights for different ResNet and UNet models to be used in [DeepLabCut](https://deeplabcut.github.io/DeepLabCut) and [SLEAP](https://sleap.ai/), as well as a manually labeled dataset with 1151 frames to train and evaluate further models.
+
 ````{margin}
 ```{admonition} Hi there!
 :class: seealso
@@ -9,25 +13,21 @@ Click the menu icon on the left to toggle the navigation bar and use the search 
 ```
 ````
 
-![Cover](Figures/Fig_1.jpg)
-
-The PigeonSuperModel is an open source implementation of multiple pre-trained deep-learning models for markerless pose tracking in pigeons. We provide pre-trained weights for different ResNet and UNet models to be used in [DeepLabCut](https://deeplabcut.github.io/DeepLabCut) and [SLEAP](https://sleap.ai/), as well as a manually labeled dataset with 1151 frames to train and evaluate further models.
-
 ## Why a PigeonSuperModel?
 
-Advances in computational neuroethology and markerless pose tracking are making it ever easier for researchers to quantify animal behavior from non-invasive video recordings. Yet, these models still rely on specialized hardware (particularly GPUs) for heavier computations, and model training can take up to several days (which makes cloud solutions such as colab impractical). A further downside is the (yet) missing standards for video recording and analysis, which makes reproducibility across labs somewhat tricky.
+Advances in computational neuroethology and markerless pose estimation are making it ever easier for researchers to quantify animal behavior from non-invasive video recordings. Yet, these models still rely on specialized hardware (particularly GPUs) for heavier computations, and model training usually take several days (which makes cloud solutions such as colab impractical). A further downside is the (yet) missing standards for video recording and analysis, which makes reproducibility across labs somewhat tricky.
 
-With this PigeonSuperModel we provide multiple pre-trained neural networks for out-of-the-box video analysis of pigeon behavior. Using a shared PigeonSuperModel across labs, we advocate for a standardized set of markers for pigeon tracking and generalizable models across experiments, animals, and camera setups.
+With this PigeonSuperModel we provide multiple pre-trained neural networks for out-of-the-box video analysis of pigeon behavior. Using a shared PigeonSuperModel across labs, we advocate for a standardized set of markers for pigeon tracking and generalizable models across experiments, animals, and camera views.
 
-We make our dataset openly available with 1151 manually labeled video frames of different pigeons in different settings, recorded from different camera views. We also provide multiple pre-trained models for popular markerless tracking software (i.e., [DeepLabCut](https://deeplabcut.github.io/DeepLabCut) and [SLEAP](https://sleap.ai/)) to be used out-of-the-box on your own data without additional configurations. We originally trained these models to generalize well across different experimental setups, using different cameras and different animals, and we found that pre-trained models can be easily re-trained on outlier frames to specialize on any particular data set using pigeons as a model organism.
+We make our dataset openly available with 1151 manually labeled video frames of different pigeons in different settings, recorded from multiple camera views. We also provide multiple pre-trained models for popular markerless tracking software (i.e., [DeepLabCut](https://deeplabcut.github.io/DeepLabCut) and [SLEAP](https://sleap.ai/)) to be used out-of-the-box on your own data without additional configurations. We originally trained these models to generalize well across different experimental setups, using different cameras and different animals. Nonetheless, we found that these pre-trained models can be easily re-trained on outlier frames to specialize on any particular data set, if needed.
 
 ## Dataset
 
-The dataset we provide, consists of 1151 manually labeled frames from 4 different experiments and depicting single animals in various poses and behaviors captured in different experimental setups. It is therefore especially well balanced to generalize to new videos. We originally designed it to train neural networks (e.g. using DeepLabCut or SLEAP) for video analysis via markerless pose tracking in pigeons. It can also be used for 3D reconstruction multi-views setups (e.g. using [Anipose](https://anipose.readthedocs.io/en/latest/index.html)). [Read more](Dataset.md).
+The dataset we provide consists of 1151 manually labeled frames from 4 different experiments and depicts single animals in various poses captured in different experimental setups. It is especially well balanced to generalize to new videos. We originally designed it to train neural networks (e.g. using DeepLabCut or SLEAP) for video analysis via markerless pose estimation in pigeons. It can also be used for 3D pose reconstruction in multi-camera setups using e.g., [Anipose](https://anipose.readthedocs.io/en/latest/index.html)). [Read more](Dataset.md).
 
 ## Models
 
-Using this dataset, we trained multiple DeepLabCut models based on different architectures (`resnet-50`, `resnet-101`, `resnet-152`) and compared tracking performance across different training stages. We make the final, pre-trained models available for out-of-the-box analysis of new videos. Moreover, we used the same dataset to train UNet models in SLEAP and benchmark performance differences, training and inference rates. [Read more](Models.md).
+Using this dataset, we trained multiple DeepLabCut models based on different architectures (`resnet-50`, `resnet-101`, `resnet-152`) and compared tracking performance across different training stages. We make the final, pre-trained models available for out-of-the-box analysis of new videos. Moreover, we used the same dataset to train `UNet` models in SLEAP and benchmark performance differences, training and inference rates. [Read more](Models.md).
 
 ## Tutorial
 

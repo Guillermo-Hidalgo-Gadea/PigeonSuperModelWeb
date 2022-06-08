@@ -1,6 +1,6 @@
 # Dataset
 
-The Pigeon Super Model is based on a multi-view dataset of 1151 manually labeled video frames depicting various pigeons in different experimental setups. It was originally intended to train neural networks for video based markerless pose tracking in pigeons. It is especially balanced to generalize well to new subjects, new videos and even unseen experimental setups. The different frames were extracted from multiple views and can thus be used for post-hoc 3D reconstruction in calibrated multi-camera setups.
+The Pigeon Super Model is based on a multi-view dataset of 1151 manually labeled video frames depicting various pigeons in different experimental setups. It was originally intended to train neural networks for video based markerless pose tracking in pigeons. It is intended to be well balanced to generalize well to new subjects, new videos and even unseen experimental setups. The different frames were extracted from multiple views and can thus be used for post-hoc 3D reconstruction in calibrated multi-camera setups.
 
 ![Cover](Figures/Fig_1.jpg)
 
@@ -13,21 +13,21 @@ stub-columns: 1
 width: 80%
 widths: 20 40
 ---
-* - Number of Videos
+* - Total Number of Videos
   - 190
-* - Camera Angles Total
+* - Total Camera Angles
   - 20
-* - Different Pigeons
+* - Total Number of Pigeons
   - 23
-* - Frames
+* - Total Number of Frames
   - 1151
-* - Image size
-  - 1280 x 960; 1920 x 1080; 1440 x 1080
-* - FPS
-  - 20; 120; 60; 75
+* - Image Sizes
+  - [1280:960]; [1920:1080]; [1440:1080]
+* - Recording Framerates
+  - 20Hz; 120Hz; 60Hz; 75Hz
 * - Number of Keypoints
   - 39
-* - Download
+* - Download link
   - [PigeonSuperModel/Dataset](https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel/-/tree/main/dataset)
 ```
 
