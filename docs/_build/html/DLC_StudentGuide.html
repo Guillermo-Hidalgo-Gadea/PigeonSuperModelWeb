@@ -1,0 +1,1003 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DeepLabCut - A Student’s Quick Start Guide &#8212; Pigeon Super Model</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/icon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Get in Touch" href="GetInTouch.html" />
+    <link rel="prev" title="SLEAP" href="SLEAP.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/PigeonSuperModel.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Pigeon Super Model</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Dataset.html">
+   Dataset
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Models.html">
+   Models
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Tutorial.html">
+   Tutorial
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="DeepLabCut.html">
+     DeepLabCut
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="SLEAP.html">
+     SLEAP
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     DeepLabCut -
+     <em>
+      A Student’s Quick Start Guide
+     </em>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel">
+   GitLab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel/-/releases">
+   Releases
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://www.ruhr-uni-bochum.de/biopsy/members.html">
+   Biopsychology Lab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="GetInTouch.html">
+   Get in Touch
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/DLC_StudentGuide.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel/issues/new?title=Issue%20on%20page%20%2FDLC_StudentGuide.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-deeplabcut">
+   What is DeepLabCut?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#do-i-need-a-gpu">
+     Do I need a GPU?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-notebooks">
+   Jupyter Notebooks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-deeplabcut-project">
+   Create a DeepLabCut Project
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-deeplabcut">
+     Import DeepLabCut
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-videolist">
+     Create Videolist
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-project">
+     Create Project
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#customize-the-config-yaml-file">
+     Customize the config.yaml file
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-training-dataset">
+   Create a training dataset
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extract-frames">
+     Extract frames
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#label-frames">
+     Label frames
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-the-labeled-frames">
+     Check the labeled frames
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-training-dataset">
+     Create training dataset
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#train-the-network">
+   Train the Network
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evaluate-network">
+     Evaluate network
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analyze-videos">
+   Analyze videos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#refine-the-network">
+   Refine the network
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#helpful-links">
+   Helpful links
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>DeepLabCut - A Student’s Quick Start Guide</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-deeplabcut">
+   What is DeepLabCut?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#do-i-need-a-gpu">
+     Do I need a GPU?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-notebooks">
+   Jupyter Notebooks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-deeplabcut-project">
+   Create a DeepLabCut Project
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-deeplabcut">
+     Import DeepLabCut
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-videolist">
+     Create Videolist
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-project">
+     Create Project
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#customize-the-config-yaml-file">
+     Customize the config.yaml file
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-training-dataset">
+   Create a training dataset
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extract-frames">
+     Extract frames
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#label-frames">
+     Label frames
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-the-labeled-frames">
+     Check the labeled frames
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-training-dataset">
+     Create training dataset
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#train-the-network">
+   Train the Network
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evaluate-network">
+     Evaluate network
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analyze-videos">
+   Analyze videos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#refine-the-network">
+   Refine the network
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#helpful-links">
+   Helpful links
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="deeplabcut-a-student-s-quick-start-guide">
+<h1>DeepLabCut - <em>A Student’s Quick Start Guide</em><a class="headerlink" href="#deeplabcut-a-student-s-quick-start-guide" title="Permalink to this headline">¶</a></h1>
+<p>This guide adresses beginner DeepLabCut users (e.g. undergraduate students with little to no experience with operating python) and serves as an introduction to using DeepLabCut for video-based pose estimation. It follows the standard DeepLabCut workflow which was introduced by <a class="reference external" href="https://doi.org/10.1038/s41596-019-0176-0">Nath et al. (2019)</a> in one of the DeepLabCut key publications.</p>
+<p>The tutorial is meant to give an impression of what a simple DeepLabCut project might look like and to serve as a template for the creation of new projects. It covers the steps of</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="seealso admonition">
+<p class="admonition-title">🧐 Student’s note</p>
+<p>Hey there!</p>
+<p>I am an undergraduate neuroscience student who recently came into contact with machine-learning based tools for markerless pose estimation, namely <em>DeepLabCut</em>.</p>
+<p>I decided to create this beginner friendly DeepLabCut guide for people who (like me) have litte experience with Python or using the command line and who want to learn how to use this helpful tool in a simple hands-on project.</p>
+</div>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="//C:/Users/SCM/GitLab/DLC/Guide/_build/html/DLC_StudentGuide.html#installation"><strong>Installing</strong></a> DeepLabCut.</p></li>
+<li><p><a class="reference external" href="//C:/Users/SCM/GitLab/DLC/Guide/_build/html/DLC_StudentGuide.html#create-a-deeplabcut-project"><strong>Creating</strong></a> a DeepLabCut project &amp; training dataset.</p></li>
+<li><p><a class="reference external" href="//C:/Users/SCM/GitLab/DLC/Guide/_build/html/DLC_StudentGuide.html#train-the-network"><strong>Training</strong></a> a DeepLabCut model.</p></li>
+<li><p><a class="reference external" href="//C:/Users/SCM/GitLab/DLC/Guide/_build/html/DLC_StudentGuide.html#analyze-videos"><strong>Analyzing</strong></a> videos with a trained DeepLabCut model.</p></li>
+<li><p><a class="reference external" href="//C:/Users/SCM/GitLab/DLC/Guide/_build/html/DLC_StudentGuide.html#refine-network"><strong>Refining</strong></a> the DeepLabCut model.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For a more extensive insight into the functions of DeepLabCut, I point to the official <a class="reference external" href="https://deeplabcut.github.io/DeepLabCut/docs/intro.html">DeepLabCut Documentation</a> that is maintained by the DeepLabCut developer team.</p>
+</div>
+<div class="section" id="what-is-deeplabcut">
+<h2>What is DeepLabCut?<a class="headerlink" href="#what-is-deeplabcut" title="Permalink to this headline">¶</a></h2>
+<p>DeepLabCut is a python toolbox designed for markerless pose estimation of animals and is developed by the team of the <a class="reference external" href="https://www.mackenziemathislab.org/deeplabcut">Mathis lab</a> of adaptive motor control. It is a video-based approach, meaning that users input video files and DeepLabCut outputs the positions of all tracked body parts for every frame of the video.</p>
+<p>To do so, DeepLabCut utilizes a supervised machine learning algorithm. In practice, this means that frames are extracted from a video and manually labeled (= the user marks the points of interest to be tracked on each frame). These labeled frames are then used to train a neural network that can eventually recognize and label the defined points of interest on its own.</p>
+<p>The resulting network (namely a DeepLabCut model) can be used to analyze new videos with respect to tracking the same points of interest.</p>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>The installation of DeepLabCut can be tricky when you are doing it for the first time. Since DeeplabCut is not yet one of the end-user optimized programs as one is used to, it has to be installed via the command line.</p>
+<p>The easiest way to do so is by following the <a class="reference external" href="https://deeplabcut.github.io/DeepLabCut/docs/installation.html">step by step instructions</a> provided by the DeepLabCut developers. Simply start with the CONDA section and follow along beginning with <em>Step 1</em>.</p>
+<p>In general, you will have to execute the following steps:</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="seealso admonition">
+<p class="admonition-title">🧐 Student’s note</p>
+<p>You can customize the name of your virtual DeepLabCut environment by opening the Installation File and changing the <code class="docutils literal notranslate"><span class="pre">name</span></code> variable (e.g. to “DLC” instead of “DEEPLABCUT”) <em>before</em> creating the environment.</p>
+<p><img alt="EditInstallationFile" src="_images/F1.PNG" /></p>
+</div>
+</div>
+<ol class="simple">
+<li><p>Install <a class="reference external" href="https://www.anaconda.com/products/distribution">Anaconda</a>. (💡 That’s a distribution platform for the Python programming language.)</p></li>
+<li><p>Download the DeepLabCut <a class="reference external" href="http://www.mackenziemathislab.org/s/DEEPLABCUT.yaml">Installation File</a>.</p></li>
+<li><p>Open Anaconda Prompt. (💡 That’s a command line application which was installed together with Anaconda.)</p></li>
+<li><p>Change directory to the directory where the installation file was saved (e.g. in Anaconda Prompt type <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">Downloads</span></code>).</p></li>
+<li><p>Create a virtual environment from the installation file. (Type <code> conda env create -f DEEPLABCUT.yaml</code>; 💡 This will install DeepLabCut and all its dependencies.)</p></li>
+<li><p>Activate the environment. (Type <code> conda activate DEEPLABCUT</code>)</p></li>
+</ol>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Anaconda prompt commands</p>
+<p>If you are unfamiliar with operating a command line interpreter, here are some tips on using Anaconda Prompt.</p>
+<ul class="simple">
+<li><p>Type <code> conda env list</code> to see a list of all your installed virtual environments (e.g. the DeepLabCut environment you created above should show up here).</p></li>
+<li><p>Type <code> conda list</code> to see a list of all the packages installed in your active environment.</p></li>
+<li><p>Type <code> conda activate <em>XYZ</em> </code> to activate environment XYZ (You can see the name of the currently activated environment next to the file path on the left.)</p></li>
+<li><p>Type <code> conda deactivate </code> to deactivate your current environment and return to the base environment.</p></li>
+</ul>
+</div>
+<p><strong>Note, that whenever you are working with DeepLabCut, the environment in which DeepLabCut is installed must be activated.</strong></p>
+<p>That’s it. After completing the installation, the real DeepLabCutting can begin.</p>
+<div class="section" id="do-i-need-a-gpu">
+<h3>Do I need a GPU?<a class="headerlink" href="#do-i-need-a-gpu" title="Permalink to this headline">¶</a></h3>
+<p>Training an artificial neural network (ANN) using DeepLabCut recquires a lot of computational power. Therefore, the DeepLabCut developers strongly recommend using a GPU for training the model but also for video analysis.
+Although it is technically possible to train and analyze on a CPU, in practice this isn’t practible, since even on a GPU the analysis can take several days to weeks (depending on the number and size of videos).</p>
+<p>So yes, you may need a GPU in order to train an ANN and to analyze videos using a trained network.</p>
+<p>It is possible to run DeepLabCut on a cloud-based computing platform, such as Google colab (that provides free GPU access). See the DeepLabCut <a class="reference external" href="https://github.com/DeepLabCut/DeepLabCut/blob/master/examples/README.md">GitHub</a> repository for more information on this option. However, in my experience, the amount of time you get access to a GPU using this option is often not enough to train a model sufficiently.</p>
+</div>
+</div>
+<div class="section" id="jupyter-notebooks">
+<h2>Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">¶</a></h2>
+<p>From this stage on, I find it easiest to create and manage DeepLabCut projects by using a Jupyter Notebook, as this will automatically log the project’s progress:</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="seealso admonition">
+<p class="admonition-title">🧐 Student’s note</p>
+<p>This page was created as a Jupyter Notebook and can be downloaded as such by clicking on the ‘Download’ button on the upper right and chosing the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> format.</p>
+</div>
+</div>
+<p>In Anaconda Prompt type <code> Jupyter Notebook </code> (note that your DeepLabCut environment should be activated).
+<img alt="CreateProject-1" src="_images/F2.PNG" /></p>
+<p>From the Notebook Dashboard (the site that opens in your browser after running the above command), create a Jupyter Notebook by clicking on “New” and selecting your DeeplabCut environment (in Jupyter Notebooks, virtual environments are called “kernel”).</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="seealso admonition">
+<p class="admonition-title">🧐 Student’s note</p>
+<p>If you are unfamiliar with the concept of Jupyter Notebooks (as I was in the beginning😏), I recommend this <a class="reference external" href="https://www.dataquest.io/blog/jupyter-notebook-tutorial/">blog post</a> which gives a good overview of the basic functions.</p>
+</div>
+</div>
+<p><img alt="CreateProject-2" src="_images/F3.PNG" /></p>
+<p>Now, you can start creating your DeepLabCut project by editing your Notebook!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When you have downloaded this website in the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> format and moved it to the directory from where you launched Jupyter Notebook, you can now open &amp; edit it and use it as a template for your own DeepLabCut project.</p>
+<p>Alternatively, you can write your own notebook from scratch and simply copy &amp; paste the code snippets listed below.</p>
+</div>
+</div>
+<div class="section" id="create-a-deeplabcut-project">
+<h2>Create a DeepLabCut Project<a class="headerlink" href="#create-a-deeplabcut-project" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="import-deeplabcut">
+<h3>Import DeepLabCut<a class="headerlink" href="#import-deeplabcut" title="Permalink to this headline">¶</a></h3>
+<p>To have access to the numerous DeepLabCut functions, you must first import DeepLabCut into your python interpreter. In your Jupyter Notebook add a python code cell and runn the following function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">deeplabcut</span>
+
+<span class="c1"># Note: To get some feedback for the successful import, you can add the print function:</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Successfully imported DeepLabCut version: </span><span class="si">{</span><span class="n">deeplabcut</span><span class="o">.</span> <span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-videolist">
+<h3>Create Videolist<a class="headerlink" href="#create-videolist" title="Permalink to this headline">¶</a></h3>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="seealso admonition">
+<p class="admonition-title">🧐 Student’s note</p>
+<p>You can extend the <code class="docutils literal notranslate"><span class="pre">video_list</span></code> parameter at later stages of the project by using the function <code class="docutils literal notranslate"><span class="pre">deeplabcut.add_new_videos</span></code>. Do this, if you want to include more videos into the project than when you originally created it.</p>
+</div>
+</div>
+<p>Create a variable named “videolist” that holds the paths to all the videos you want to include into the project. Simply write down all the file paths for the videos you want to analyze as a list:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">videolist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Full/path/of/video/1&#39;</span><span class="p">,</span> <span class="s1">&#39;Full/path/of/video/2&#39;</span><span class="p">,</span> <span class="s1">&#39;Full/path/of/video/3&#39;</span><span class="p">]</span>
+
+<span class="c1"># Note: In Windows, the file paths must be formated as r&#39;C:\Full\path\of\video.MP4&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-project">
+<h3>Create Project<a class="headerlink" href="#create-project" title="Permalink to this headline">¶</a></h3>
+<p>To create a new DeepLabCut project, you simply have to run the function <code class="docutils literal notranslate"><span class="pre">deeplabcut.create_new_project</span></code> after customizing all its required parameters:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">config_path</span> <span class="o">=</span> <span class="n">deeplabcut</span><span class="o">.</span><span class="n">create_new_project</span><span class="p">(</span><span class="s1">&#39;Name of the project&#39;</span><span class="p">,</span> <span class="s1">&#39;Name of the experimenter&#39;</span><span class="p">,</span> <span class="n">videolist</span><span class="p">,</span> <span class="n">working_directory</span><span class="o">=</span><span class="s1">&#39;Full path of the working directory&#39;</span><span class="p">,</span> <span class="n">copy_videos</span><span class="o">=</span><span class="kc">True</span><span class="o">/</span><span class="kc">False</span><span class="p">,</span> <span class="n">multianimal</span><span class="o">=</span><span class="kc">True</span><span class="o">/</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">How to configure the function parameters </p>
+<p>Here’s a list of the function’s parameters and the options you have to customize them:</p>
+<ul class="simple">
+<li><p><code>Name of the project</code>: Fill in your projects title.</p></li>
+<li><p><code>Name of the experimenter</code>: Fill in your name.</p></li>
+<li><p><code>videolist</code>: If you’ve defined a variable ‘videolist’ containing the paths to all your videofiles, you can leave this parameter as it is. Otherwise, you will have to manually fill in all your video file’s paths as a list into this parameter.</p></li>
+<li><p><code>working_directory</code>: Fill in the path to the directory where you want your project to be created. DeepLabCut will then create a directory containing a configuration file and different subdirectories where your project will be stored.</p></li>
+<li><p><code>copy_videos</code>: This parameter specifies if the videos from the videolist will be copied into a subdirectory (named ‘videos’). Setting this parameter to ‘False’ will lead to the creation of symbolic links to the videos. (Normally, I would recommend setting <code>copy_videos</code> to ‘False’ because this saves memory capacity. However, if you want to move or rename the original video files after the project has been created, I recommend setting it to ‘True’.)</p></li>
+<li><p><code>multianimal</code>: This parmater specifies what type of project you are creating. Set this to ‘True’ if your videos capture multiple subjects at once. Otherwise, choose ‘False’.</p></li>
+</ul>
+<p><strong>Important</strong>: Leave no blank spaces between words when filling in the parameters (not ‘My Project’, but ‘MyProject’)!</p>
+</div>
+<p>It is easiest to define a variable <code class="docutils literal notranslate"><span class="pre">config</span> <span class="pre">path</span></code> when creating the project (as shown above). This will make it easier to use other DeepLabCut functions during later stages of the project, as it will often require you to indicate your <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> file. However, you can also do this in an independent step after creating your project.</p>
+<p>This is also how you can “reload” your project after closing and reopening the jupyter notebook. Simply run:</p>
+<p><code class="docutils literal notranslate"><span class="pre">config_path</span> <span class="pre">=</span> <span class="pre">'full/path/to/your/projects/config.yaml/file'</span></code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For all DeepLabCut functions, you can always run <code class="docutils literal notranslate"><span class="pre">deeplabcut.name_of_function?</span></code> to call the embedded help function. This will show you e.g. a list with information on all the parameters of the respective function.</p>
+</div>
+</div>
+<div class="section" id="customize-the-config-yaml-file">
+<h3>Customize the config.yaml file<a class="headerlink" href="#customize-the-config-yaml-file" title="Permalink to this headline">¶</a></h3>
+<p>After running <code class="docutils literal notranslate"><span class="pre">deeplabcut.create_new_project</span></code>, DeepLabCut created a new project directory within your selected working directory. Inside this project directory you find four <em>prepared subdirectories</em> (<code class="docutils literal notranslate"><span class="pre">dlc-models</span></code>, <code class="docutils literal notranslate"><span class="pre">labeled-data</span></code>, <code class="docutils literal notranslate"><span class="pre">training-datasets</span></code>, <code class="docutils literal notranslate"><span class="pre">videos</span></code>) and a configuration file named <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code>.</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">The project’s directory structure</p>
+<p>The following will be stored in the <strong>prepared subdirectories</strong>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dlc-models</span></code>: After training your model, this directory will hold the specialized model weights that you can later use to analyze new videos.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">labeled-data</span></code>: This directory stores the extracted frames &amp; manual annotated labels for each video.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">training-datasets</span></code>: This directory stores the datasets that will be used to train the model.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">videos</span></code>: This directory stores either the videos you want to analyze or symbolic links to the video files (depending on whether you set <code class="docutils literal notranslate"><span class="pre">copy_videos=True/False</span></code> when creating the project).</p></li>
+</ul>
+<p>At later stages of the project, new subdirectories can be added, such as <code class="docutils literal notranslate"><span class="pre">evaluation-results</span></code>.</p>
+</div>
+<p>The next step is now to customize the configuration file according to your requirements:</p>
+<p>To do so, you first need to open the <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> file in the text editor of your choice (e.g. “Notepad++”, “Visual Studio Code”).</p>
+<p>The first parameters in the <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> file (<code class="docutils literal notranslate"><span class="pre">Task</span></code>, <code class="docutils literal notranslate"><span class="pre">scorer</span></code>, <code class="docutils literal notranslate"><span class="pre">date</span></code>, <code class="docutils literal notranslate"><span class="pre">multianimalproject</span></code>) have been automatically filled in, when the project was created. The same is true for the <code class="docutils literal notranslate"><span class="pre">project_path</span></code> parameter and the list of your included videos in <code class="docutils literal notranslate"><span class="pre">video_sets</span></code>.</p>
+<p>Whilst the first four parameters should not be changed throughout the project, the <code class="docutils literal notranslate"><span class="pre">project_path</span></code> parameter should be updated, when you move the project to another directory.</p>
+<p>All other parameters in the configuration file are currently set to the DeepLabCut default and may need to be changed throughout the project.</p>
+<p>Now, for the most important changes you have to make to the parameters in the <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> file in the beginning:</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="seealso admonition">
+<p class="admonition-title">🧐 Student’s note</p>
+<p>Note that you can even add bodyparts at later stages in the project. This will result in you having to relabel all your extracted frames and (depending on your project’s progress) retrain your model afterwards.</p>
+<p>The same is true for the skeleton. This can be changed without causing any extra work on your side or need to retrain the model.</p>
+</div>
+</div>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">bodyparts</span></code>: The whole point of DeepLabCut is to track different bodyparts on a given animal. Therefore, in this parameter you have to define the key features you want to track throughout your video files. Use the notation that is already given by the dummy entries in the config.file (e.g. <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">NameOfBodypart</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numframes2pick</span></code>: This parameter specifies, how many frames will be extracted from each of your video files in the following step for manual labeling. The total number of labeled frames will later make up the size of your training dataset. There is no fixed specification on how large the training dataset should be (as this largely depends on your amount of videos, video quality, number of included animals, …). However, the general rule is: the bigger, the better. For a start, I would aim for a size of at least 200 frames. Therefore, only adapt this parameter if you have a whole lot of videos. Otherwise, just leave it as it is for now.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">skeleton</span></code>: Here, you can specify connections between your tracked bodyparts. This will become relevant after the next step, when you plot your manually annotated frames to check whether all labels were positioned correctly. As with the <code class="docutils literal notranslate"><span class="pre">bodyparts</span></code>, take care to use the exact syntax that is specified in the dummy entries (e.g. tabs &amp; spaces!).</p></li>
+</ol>
+<p>These are the most important adjustments to the configuration file that you need to make when you start a new project. In the dropdown entry below, you find a summary of all the parameters in the configuration file, taken from the DeepLabCut documentation. Most of them will become relevant later, during model training.</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Summary of all parameters in the configuration file</p>
+<p>Here is a comprehensive glossary on all the parameters in the <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> file.
+<img alt="config_parameters" src="https://images.squarespace-cdn.com/content/57f6d51c9f74566f55ecf271/1547760664242-YTAF13NT36K4IFBI0KXL/Box1-01.png?format=1000w&amp;content-type=image%2Fpng" />
+<em>Figure taken from <a class="reference external" href="https://deeplabcut.github.io/DeepLabCut/docs/standardDeepLabCut_UserGuide.html#a-create-a-new-project">DeepLabCut Documentation/DeepLabCut user Guide (for single animal projects)</a>.</em></p>
+</div>
+</div>
+</div>
+<div class="section" id="create-a-training-dataset">
+<h2>Create a training dataset<a class="headerlink" href="#create-a-training-dataset" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="extract-frames">
+<h3>Extract frames<a class="headerlink" href="#extract-frames" title="Permalink to this headline">¶</a></h3>
+<p>The core of a DeepLabCut project is the training dataset that is used to train the resulting neural network. The training dataset is a set of manually labeled frames that were extracted from the video files. The quality of the training dataset will determine the performance (= the tracking accuracy) of the trained model.</p>
+<p>As stated above, there is no fixed specification on how many frames should be extracted. A sufficient training dataset should include frames from all shown behaviors across all individuals, lightning conditions &amp; settings depicted in the videos. Therefore, a relatively large data set (consisting of a large number of frames) is desirable.</p>
+<p>The following function will extract the amount of frames per video specified in the configuration file (<code class="docutils literal notranslate"><span class="pre">numframes2pick</span></code>) and store them in individual subdirectories within the labeled-data folder:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deeplabcut</span><span class="o">.</span><span class="n">extract_frames</span><span class="p">(</span><span class="n">config_path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;automatic/manual&#39;</span><span class="p">,</span> <span class="n">algo</span><span class="o">=</span><span class="s1">&#39;uniform/kmeans&#39;</span><span class="p">,</span> <span class="n">userfeedback</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">crop</span><span class="o">=</span><span class="kc">True</span><span class="o">/</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note, that you will have to adapt the parameters according to your whishes:</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="seealso admonition">
+<p class="admonition-title">🧐 Student’s note</p>
+<p>Normally, I adapt the parameters as follows:</p>
+<p><code class="docutils literal notranslate"><span class="pre">mode</span> <span class="pre">=</span> <span class="pre">'automatic',</span> <span class="pre">algo</span> <span class="pre">=</span> <span class="pre">'kmeans',</span> <span class="pre">userfeedback</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">crop</span> <span class="pre">=</span> <span class="pre">False</span></code></p>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mode</span></code>: Here, you specify whether you want to manually pick the frames to be included into your training dataset (´manual´) or if you want DeepLabCut to do it for you according to a specific algorithm you can define in the next parameter (<code class="docutils literal notranslate"><span class="pre">automatic</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">algo</span></code>: When you set the <code class="docutils literal notranslate"><span class="pre">mode</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">automatic</span></code>, here, you specify the algorithm that will be used to extract frames. Setting this parameter to <code class="docutils literal notranslate"><span class="pre">uniform</span></code> will cause DeepLabCut to select frames in a temporally uniformly distributed way (e.g. “one frame per 1000 frames”). Normally, I recommend setting this parameter to <code class="docutils literal notranslate"><span class="pre">kmeans</span></code>. This will select frames by clustering based on visual appereance - meaning, it will select frames that depict different forms of behavior even if they occur only occasionally throughout the video. However, slecting frames by clutering is also more time consuming than selecting them uniformly.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">userfeedback</span></code>: This parameter is set to <code class="docutils literal notranslate"><span class="pre">False</span></code> per default. Setting this to <code class="docutils literal notranslate"><span class="pre">True</span></code> will cause DeepLabCut to check for user approval for every frame throughout the extraction (very time consuming!).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">crop</span></code>: Setting this parameter to <code class="docutils literal notranslate"><span class="pre">True</span></code> will cause a GUI to pop up and ask the user to draw a box onto the frame, selecting the area of interest. The extracted frames will then be cropped in into this are. (This usually only makes sense, when your camera captures a much larger space than were the behavior of interest took place.)</p></li>
+</ul>
+</div>
+<div class="section" id="label-frames">
+<h3>Label frames<a class="headerlink" href="#label-frames" title="Permalink to this headline">¶</a></h3>
+<p>The next step is now to manually label all the extracted frames. This can take up to several hours (depending on the size of your dataset and the number of key features) and should be done very carefully. As said before - the quality of the training dataset determines the tracking performance of the trained model.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="seealso admonition">
+<p class="admonition-title">🧐 Student’s note</p>
+<p>Opening the GUI from the jupter notebook can cause problems when one wants to close and restart the GUI (e.g. to take a break in between labeling frames). This will require to interrupt &amp; restart the kernel, potentially crashing the notebook temporally.</p>
+<p>However, you can of course call the labeling GUI directly in the notebook by running:</p>
+<p><code class="docutils literal notranslate"><span class="pre">deeplabcut.label_frames(config_path)</span></code></p>
+<p>(I don’t recommend it.)</p>
+</div>
+</div>
+<p>To open the labeling GUI, I recommend using the main DeepLabCut GUI. To do so,</p>
+<ul class="simple">
+<li><p>open a new window of Anaconda Prompt.</p></li>
+<li><p>activate your DeepLabCut environment.</p></li>
+<li><p>type <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">deeplabcut</span></code>.</p></li>
+</ul>
+<p>A new window will open (this might take some time).</p>
+<p>Click on “Manage Project”, then choose “Load existing project”. Click on “Browse” to select your project’s <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> file and confirm.</p>
+<blockquote>
+<div><p><em>After confirming, your project is loaded into the DeepLabCut GUI.</em>
+<img alt="Labeling-1" src="_images/F4.PNG" /></p>
+</div></blockquote>
+<p>Next, change to “Label Data”. The path to your configuration file is already filled in, so you can directly launch the labeling GUI by clicking on “Label Frames”.</p>
+<blockquote>
+<div><p><em>To open the labeling GUI, click on “Label Frames”.</em>
+<img alt="Labeling-2" src="_images/F5.PNG" /></p>
+</div></blockquote>
+<p>This will open the DeepLabCut labeling GUI, a tool that allows for the manual annotation of the extracted frames.</p>
+<!--- _After clicking on "Label Frames", the DeepLabCut labeling GUI will open._
+![Labeling-3](FFigures/6.PNG)--->
+<p>In the GUI, click on “Load Frames”, then select one of the subdirectories with the extracted frames (you find them in “labeled-data”) and click “ok”.</p>
+<blockquote>
+<div><p><em>It can take a few moments until the frames are fully loaded into the GUI.</em>
+<img alt="Labeling-4" src="_images/F7.PNG" /></p>
+</div></blockquote>
+<p>Now, you can start to label your keypoints of interest. Check out the box below for more information on how to label frames efficiently.</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Some tips for the manual labeling process</p>
+<ul class="simple">
+<li><p>Place a label by right-clicking on the respective spot in the frame.</p></li>
+<li><p>Click and hold the left mouse key to dag &amp; drop labels that are already annotated.</p></li>
+<li><p>Press Ctrl + c to copy all labels from the previous frame (take care not to overwrite already annotated frames while using this shortcut).</p></li>
+<li><p>Take care to consistently label the same spots.</p></li>
+<li><p>Make sure you don’t label any bodyparts that aren’t visible in a given frame (e.g. because they are occluded by other bodyparts). Only label bodyparts that are really visible.</p></li>
+<li><p>Since the accuracy of the manually placed labels determines to a large extent the labeling performance of your resulting DeepLabCut model, you should allow enough time for this part and place the labels as accurately as possible.</p></li>
+<li><p>In my experience, it is best to first label all visible bodyparts in a frame and then use the zoom function to enlarge smaller sections of the image and refine the position of the set labels. To do this, click on the zoom button and drag a box over the section you want to enlarge. Click on Home to return to the overall view.
+<img alt="Labeling-5" src="_images/F8.PNG" /></p></li>
+<li><p>I recommend that you decide in advance on a logical order in which to label the individual bodyparts, to enable a sensible workflow. The order in which the labels are displayed in the right column is determined by the order in which they are listed in the configuration file.  To adapt tis labeling workflow, just change the order of the bodyparts in the <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> file.</p></li>
+<li><p><strong>Save your progress!</strong> When you are done labeling a set of frames, click <strong>“Save”</strong>. The positions of the labels you set are then saved within the subdirectories for the respective video in “labeled-data” as a .csv file and in .h5 format. You can also save the labels in between and then reopen the same set of labels to continue labeling.</p></li>
+<li><p>To close the GUI, click on “Quit”. DeepLabCut will then ask, whether you want to label another set of frames. To automatically load another set of frames, click on “Yes”. However, I recommend to close and reopen the GUI every now and then, to prevent the command processing speed from becoming too slow.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="check-the-labeled-frames">
+<h3>Check the labeled frames<a class="headerlink" href="#check-the-labeled-frames" title="Permalink to this headline">¶</a></h3>
+<p>After manual labeling is complete, the labeled frames should be checked for any errors. Particularly serious are errors where, for example, the sides of the body parts to be labeled have been systematically swapped (e.g., right and left hands mixed up). Such errors in the training dataset can lead to systematic label errors in the final model and should therefore be avoided.</p>
+<p>To check for labeling errors, DeepLabCut provides the <code class="docutils literal notranslate"><span class="pre">deeplabcut.check_labels</span></code> function. The function plots all extracted frames together with the manually set labels and the user-defined skeleton:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deeplabcut</span><span class="o">.</span><span class="n">check_labels</span><span class="p">(</span><span class="n">config_path</span><span class="p">,</span> <span class="n">visualizeindividuals</span><span class="o">=</span><span class="kc">True</span><span class="o">/</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To detect possible errors, all labeled frames should now be opened and the position of the labels checked. In order to be able to quickly detect errors (such as swapped label positions), it is recommended to have previously created a comprehensive skeleton in the <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> file.</p>
+<blockquote>
+<div><p><em>The manually set labels will be plotted directly onto the extracted frames. If you detect any errors while checking the labels, you can simply correct them by reopening the labeling GUI and changing the respective labels positions.</em>
+<img alt="Labeling-6" src="_images/F9.PNG" />
+<em>A: Discovered labeling error with mixed up labels. B: Corrected Frame.</em></p>
+</div></blockquote>
+</div>
+<div class="section" id="create-training-dataset">
+<h3>Create training dataset<a class="headerlink" href="#create-training-dataset" title="Permalink to this headline">¶</a></h3>
+<p>When you are happy with all your set labels, you can combine them into a training dataset that can be used to train your DeepLabCut model.</p>
+<p>To do so, use the function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deeplabcut</span><span class="o">.</span><span class="n">create_training_dataset</span><span class="p">(</span><span class="n">config_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This function takes all the files with the user-set labels positions and combines them into one big training (and a smaller test) dataset.</p>
+<p>As the name suggests, the training dataset is used to train the model. The model generated in this way is then tested on the test dataset for its performance on previously “unseen” frames.</p>
+<p>The division of the frames into training and test data set is defined in the <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> file in the <code class="docutils literal notranslate"><span class="pre">TrainingFraction</span></code> parameter. By default, this parameter is set to 0.95, which means that 95% of the manually labeled frames are used for training and 5% for testing the trained model.</p>
+<p>There are a number of additional parameters that can be adjusted when creating a training dataset. For a complete list of parameters, please see the <a class="reference external" href="https://deeplabcut.github.io/DeepLabCut/docs/standardDeepLabCut_UserGuide.html#api-docs-for-deeplabcut-create-training-dataset">DeepLabCut documentation</a>.</p>
+</div>
+</div>
+<div class="section" id="train-the-network">
+<h2>Train the Network<a class="headerlink" href="#train-the-network" title="Permalink to this headline">¶</a></h2>
+<p>After a training dataset is created, the next step is to train a DeepLabCut model.</p>
+<p>This is as simple as executing the following function (Note that a GPU is highly recommended for this step, as training a neural network on a CPU will take <em>very</em> long):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deeplabcut</span><span class="o">.</span><span class="n">train_network</span><span class="p">(</span><span class="n">config_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Running the function as depicted above, will lead to DeepLabCut using all the default settings for the function parameters.</p>
+<p>However, as the trained model will be the major outcome of a DeepLabCut project, you might want to dive deeper into the different options for model training.</p>
+<p>You can for example specify what type of neural network is trained (e.g. residual neural networks (<code class="docutils literal notranslate"><span class="pre">resnet</span></code>) with different numbers of layers).</p>
+<p>I highly recommend to check out the <a class="reference external" href="https://deeplabcut.github.io/DeepLabCut/docs/standardDeepLabCut_UserGuide.html#g-train-the-network">DeepLabCut Documentation</a> to make yourself familiar with the different options on model training.</p>
+<div class="section" id="evaluate-network">
+<h3>Evaluate network<a class="headerlink" href="#evaluate-network" title="Permalink to this headline">¶</a></h3>
+<p>To determine the quality of the trained model, you can evaluate the model’s labeling performance by running:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deeplabcut</span><span class="o">.</span><span class="n">evaluate_network</span><span class="p">(</span><span class="n">config_path</span><span class="p">,</span> <span class="n">plotting</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This will create a new subdirectory in your project directory where the evaluation results are stored. Evaluation results (namely the test- and training error) are then written into a .csv file that can be inspected with any common text editor.</p>
+<p>Setting the <code class="docutils literal notranslate"><span class="pre">plotting</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">True</span></code> will plot all the labels of the training &amp; test dataset together with the label predictions made by the model and the manually set labels. Manually set labels are displayed as a plus symbol “+” and the model’s predictions either as a dot (for predictions with a high likelyhood) or as an “x” (for predictions with a low likelyhood)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The likelihood of the model’s predictions is displayed with respect to the parameter <code class="docutils literal notranslate"><span class="pre">p-cutoff</span></code> that is set in the <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> file. The default value is <code class="docutils literal notranslate"><span class="pre">0.7</span></code>, meaning that predictions with a likelihood of <code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">0.7</span></code> will be displayed as uncertain predictions.</p>
+</div>
+<p>If you find that the model’s labeling accuracy is not yet sufficient, you should extract and label more frames from the video files, create a novel training dataset and retrain the model.</p>
+</div>
+</div>
+<div class="section" id="analyze-videos">
+<h2>Analyze videos<a class="headerlink" href="#analyze-videos" title="Permalink to this headline">¶</a></h2>
+<p>When you are happy with your model’s labeling accuracy on the test and training frames, you can start to analyze the original video footage. Note that this step can be time consuming (even more than the model training), depending on the amount and size of your video data.</p>
+<p>To start the analysis, run:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deeplabcut</span><span class="o">.</span><span class="n">analyze_videos</span><span class="p">(</span><span class="n">config_path</span><span class="p">,</span> <span class="n">videolist</span><span class="p">,</span> <span class="n">save_as_csv</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The analysis results will be stored in the “videos” subdirectory. For each video, there will be a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> and a <code class="docutils literal notranslate"><span class="pre">.h5</span></code> file created, that holds the model’s label predictions for every frame of the video.</p>
+<p>As the raw tracking results are often messy, it is recommended to filter the model’s predictions. This can be done by applying a median filter, using the function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deeplabcut</span><span class="o">.</span><span class="n">filterpredictions</span><span class="p">(</span><span class="n">config_path</span><span class="p">,</span> <span class="n">videolist</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There is also an option to generate video files with the model set labels:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deeplabcut</span><span class="o">.</span><span class="n">plot_trajectories</span><span class="p">(</span><span class="n">config_path</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;fullpath/TestProject/videos/videofilename.mp4&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>However, I would recommend not to plot the labels for all analyzed videos, since these then naturally also take up twice as much storage space as the original videos. (Therefore, replace the variable “videolist” by a list of one or few exemplary videos.)</p>
+</div>
+<div class="section" id="refine-the-network">
+<h2>Refine the network<a class="headerlink" href="#refine-the-network" title="Permalink to this headline">¶</a></h2>
+<p>After training &amp; evaulating the model and seeing first analysis results, you might conclude that your model’s labeling accuracy is not yet to your satisfaction.</p>
+<p>Don’t worry, there is an easy way to fix it: Refine your model.<br />
+In particular, this means that you should label more data to create a more comprehensive training dataset.</p>
+<p>To do so, you can extract outlier frames, meaning that you extract frames with a particuarly low overall labeling likelihood.</p>
+<p>First, run the function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deeplabcut</span><span class="o">.</span><span class="n">extract_outlier_frames</span><span class="p">(</span><span class="n">config_path</span><span class="p">,</span> <span class="n">videolist</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, you can start to relabel the extracted frames. You can do so by either launching the DeepLabCut labeling GUI (using the main GUI as described above) or by launching a separate “refinement” GUI. This will plot all machine-set labels on the extracted frames and allow you to drag &amp; draw them to their correct positions.</p>
+<p>As with the “normal” labeling GUI, I recommend to launch the refinement GUI using the main DeepLabCut GUI, as this will prevent any complications that can arise from using the Jupyter Notebook for this part.</p>
+<p>First, open your project in the main DeepLabCut GUI.</p>
+<p>Then, change to “Refine Labels” and click on “Label Frames”.</p>
+<p>The refinement GUI will open in front of you, much as the labeling GUI did earlier. The only real difference is, that you will have to insert a specific <code class="docutils literal notranslate"><span class="pre">p-cutoff</span></code> in the beginning, specifying how the machine-set labels are displayed in the GUI.</p>
+<p>Labels with a likelihood lower than the specified <code class="docutils literal notranslate"><span class="pre">p-cutoff</span></code> will be displayed as circles, whilst labels with a higher likelihood are displayed as larger dots on the frame.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>I recommend to use the ‘normal’ labeling GUI for sets frames with very poor labeling accuracy, as I find it very time consuming to ‘search’ for the individual labels throughout every frame. In the “normal” labeling GUI, the extracted oulier frames will be displayed with no labels in contrast to the already manually labeled frames of the original training dataset.</p>
+<p>If the overall labeling accuracy isn’t too bad, it can however be faster to use the refinement GUI.</p>
+</div>
+<p>When you are satisfied with the positions of the labels, you can merge the refined labels to your original training dataset by running:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deeplabcut</span><span class="o">.</span><span class="n">merge_datasets</span><span class="p">(</span><span class="n">config_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Afterwards, you can refine the actual model by training it with the extended training dataset.</p>
+<p>To do so, simply run <code class="docutils literal notranslate"><span class="pre">deeplabcut.train_network</span></code> again (see above).</p>
+<p>If the results are satisfactory, you can now reanalyze new videos as described above. Otherwise, you can extract and label new outlier frames and continue to retrain the model, until it reaches a satisfactory labeling performance.</p>
+</div>
+<div class="section" id="helpful-links">
+<h2>Helpful links<a class="headerlink" href="#helpful-links" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Comprehensive <a class="reference external" href="https://deeplabcut.github.io/DeepLabCut/docs/intro.html">DeeplabCut Documentation</a> by the DLC developers</p></li>
+<li><p>For more information on jupyter notebooks, visit <a class="reference external" href="https://jupyter.org/">Project Jupyter’s homepage</a></p></li>
+</ul>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p>DeepLabCut Documentation. <a class="reference external" href="https://deeplabcut.github.io/DeepLabCut/docs/intro.html">https://deeplabcut.github.io/DeepLabCut/docs/intro.html</a></p>
+<p>Nath, T., Mathis, A., Chen, A. C., Patel, A., Bethge, M., &amp; Mathis, M. W. (2019). Using DeepLabCut for 3D markerless pose estimation across species and behaviors. <em>Nature Protocols, 14</em>(7), 2152–2176. <a class="reference external" href="https://doi.org/10.1038/s41596-019-0176-0">https://doi.org/10.1038/s41596-019-0176-0</a></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="SLEAP.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">SLEAP</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="GetInTouch.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Get in Touch</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Guillermo Hidalgo Gadea & Sarah C. Möser, IKN, Ruhr-University Bochum<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
