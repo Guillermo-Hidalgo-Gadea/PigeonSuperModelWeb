@@ -4,15 +4,6 @@
 
 The PigeonSuperModel is an open source repository of multiple pre-trained deep-learning models for markerless pose tracking in pigeons. We provide pre-trained weights for different ResNet and UNet models to be used in [DeepLabCut](https://deeplabcut.github.io/DeepLabCut) and [SLEAP](https://sleap.ai/), as well as a manually labeled dataset with 1151 frames to train and evaluate further models.
 
-````{margin}
-```{admonition} Hi there!
-:class: seealso
-This is the jupyterBook documentation of the PigeonSuperModel. You can navigate it like a regular website and download individual pages as .pdf, .md, or .ipynb, when needed.
-
-Click the menu icon on the left to toggle the navigation bar and use the search bar to lookup keywords. You can also click yourself through the different pages with the arrows at the bottom, or use the icons on the top right to access our GitLab repository.
-```
-````
-
 ## Why a PigeonSuperModel?
 
 Advances in computational neuroethology and markerless pose estimation are making it ever easier for researchers to quantify animal behavior from non-invasive video recordings. Yet, these models still rely on specialized hardware (particularly GPUs) for heavier computations, and model training usually take several days (which makes cloud solutions such as colab impractical). A further downside is the (yet) missing standards for video recording and analysis, which makes reproducibility across labs somewhat tricky.
