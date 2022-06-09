@@ -31,13 +31,21 @@ To wrap it all up, we provide some further instructions on how to make use of ou
 * [Tutorial](Tutorial.md)
 * [Get in Touch](GetInTouch.md)
 
-## References
+## Open Source License
+
+This is an open source project and we want to actively encourage you to use it as a resource for your work. For questions or feedback please use the `Issues` feature of GitLab [here](https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel/-/issues). We are happy to help you out setting up your own project. The copyright remains with the [Institute of Cognitive Neuroscience](https://www.ikn.psy.ruhr-uni-bochum.de/indexE.html).
+
+## Reference
 
 If you find either the dataset or the pre-trained models provided in the PigeonSuperModel to be useful for your research, please cite:
 > Hidalgo-Gadea, G., Möser, S.C., ... & Güntürkün, O. (2022). In preparation
 
 ## Contributors
 
-The PigeonSuperModel is a group effort by the entire [Biopsychology Team](https://www.ruhr-uni-bochum.de/biopsy/members.html) with the Institute of Cognitive Neuroscience (IKN) at the Ruhr-University Bochum. The project originated from common interest in using machine learning for animal tracking, which led us to create a common video dataset from multiple experiments. Guillermo Hidalgo Gadea and Sarah Möser managed the project and trained the PigeonSuperModel. [Read more](GetInTouch.md).
+The PigeonSuperModel is a group effort by the entire [Biopsychology Team](https://www.ruhr-uni-bochum.de/biopsy/members.html) with the Institute of Cognitive Neuroscience (IKN) at the Ruhr-University Bochum. The project originated from common interest in using machine learning for animal tracking, which led us to create a common video dataset from multiple experiments within the lab. Guillermo Hidalgo Gadea and Sarah C. Möser curated the dataset and trained the PigeonSuperModel. [Read more](GetInTouch.md).
 
-This work was carried out at the Institute of Cognitive Neuroscience (IKN), Department of Biopsychology at the Ruhr-University Bochum and supported by the German Research Foundation DFG in the context of funding the Research Training Group “Situated Cognition” (GRK 2185/1). Original: Gefördert durch die Deutsche Forschungsgemeinschaft (DFG) - Projektnummer GRK 2185/1.
+Multiple researchers from the department contributed to this dataset. A special thank you goes to [Noemi Rook](https://www.ruhr-uni-bochum.de/biopsy/members_noemi.html), [Neslihan Wittek](https://www.ruhr-uni-bochum.de/biopsy/members_neslihan.html), [John M. Tuff](https://www.ruhr-uni-bochum.de/biopsy/members_john.html), [Mengmeng Li](https://www.bio.psy.ruhr-uni-bochum.de/members_mengmeng.html) and [Celil S. Sevincik](https://www.ruhr-uni-bochum.de/biopsy/members_semih.html).
+
+## Funding
+
+This work was carried out at the Institute of Cognitive Neuroscience (IKN), Department of Biopsychology at the Ruhr-University Bochum and supported by the Deutsche Forschungsgemeinschaft DFG (German Research Foundation) through SFB 1372 project number 395940726, subproject Neu06, as well as in the context of funding the Research Training Group “Situated Cognition” (GRK 2185/1).
