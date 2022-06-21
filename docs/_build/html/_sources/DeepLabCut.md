@@ -1,32 +1,40 @@
 # DeepLabCut
 
-There are several ways to use the PigeonSuperModel in DeepLabCut.
 
-## Using the DeepLabCut Model Zoo
+## How to use the PigeonSuperModel
 
-The easiest way to use our models is to download them directly from the DeepLabCut Model Zoo.
+The easiest way to use our pre-trained models is to download them with DeepLabCut ModelZoo. This notebook will show you how to do that:
+
+* [How to use the PigeonSuperModel](HowToPigeonSuperModel.ipynb)
+
+
+## Extract Outlier Frames and re-Train the PigeonSuperModel
 
 :::{note}
-This option is not yet available, but we have come up with a solution that will allow you to use our models as if they already were included into the Model Zoo.
-
-To do so, use [this link](https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel/-/tree/main/models/DeepLabCut) to download the pre-trained model of your choice (`resnet-50`, `resnet-101` or `resnet-152`).
-
-Then download this Jupyter Notebook to start analyzing your data.
+This section is coming soon.
 :::
 
-## Using the provided dataset to train your own model
+## How to use the PigeonSuperModel Dataset
 
-You can of course also use our dataset, to train novel DeepLabCut models.
+:::{note}
+This section is coming soon.
+:::
 
-## Adapting the model to your experimental setup
+## DeepLabCut Guides and HowTos
 
-<!---Add labels / Train reference model?--->
+Need some further help? Check our step by step guide:
+* [DeepLabCut - A Student’s Quick Start Guide](DLC_StudentGuide.ipynb)
 
-If you've wondered how you could adapt the Pigeon Super Model to your own experimental setup and include novel labels for specific key features, here is the answer you have been looking for:
+You can also brows some of our seminar websites on [Tracking Animal Behavior](https://guillermo-hidalgo-gadea.github.io/Seminar-TrackingAnimalBehavior/intro.html) and [Computational Ethology](https://guillermo-hidalgo-gadea.github.io/Seminar-ComputationalEthology/intro.html) at the Ruhr University Bochum.
 
-First of all, we would not recommend adding new labels to the original Pigeon Super Model.
+## Using Anipose for 3D Pose Reconstruction
 
-As a solution for this issue, we recommend training a novel DeepLabCut model to recognize only the surrounding of your experiment, excluding the pigeon.  
-If you filmed your video data from a stable perspective so that the background hardly ever changes throughout your videos, the manual labeling task for this separate model will not take long (as you can copy-and-paste the labels for almost all your frames).
+Why stop at 2D tracking when your tracked animals move in 3D space? Pigeons in particular have a naturally upright pose, which makes 2D poses often hard to interprete. Here we provide a short introduction on how to use [Anipose](https://anipose.readthedocs.io/en/latest/) to upgrade your DeepLabCut projects for 3D pose reconstruction:
 
-After training this reference model sufficiently, the analysis results of both models can be merged, generating output labels for both, the pigeon and your experimental setup's key features.
+* [Using Anipose for 3D Pose Reconstruction](UsingAnipose3D.ipynb)
+
+## Example Analysis with PigeonSuperModel Tracking
+
+Need some inspiration? In the following notebooks we give you some examples of what you can do with tracking data after using the PigeonSuperModel:
+
+* [Locomotion tracking in Pigeons](LocomotionTrackingPigeon.ipynb)
