@@ -1,0 +1,723 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to use the PigeonSuperModel &#8212; Pigeon Super Model</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/icon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="DeepLabCut - A Student’s Quick Start Guide" href="DLC_StudentGuide.html" />
+    <link rel="prev" title="DeepLabCut" href="DeepLabCut.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/PigeonSuperModel.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Pigeon Super Model</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Dataset.html">
+   Dataset
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Models.html">
+   Models
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Tutorial.html">
+   Tutorial
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="DeepLabCut.html">
+     DeepLabCut
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       How to use the PigeonSuperModel
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="DLC_StudentGuide.html">
+       DeepLabCut -
+       <em>
+        A Student’s Quick Start Guide
+       </em>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="SLEAP.html">
+     SLEAP
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel">
+   GitLab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel/-/releases">
+   Releases
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://www.ruhr-uni-bochum.de/biopsy/members.html">
+   Biopsychology Lab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="GetInTouch.html">
+   Get in Touch
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/HowToPigeonSuperModel.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel/issues/new?title=Issue%20on%20page%20%2FHowToPigeonSuperModel.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-preliminary-settings">
+   Some preliminary settings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-your-local-pigeonsupermodel-project">
+   Create your local PigeonSuperModel project
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#check-project-settings">
+   Check project settings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analyze-new-videos">
+   Analyze new videos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#filter-predictions-optional">
+   Filter Predictions (Optional)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-labeled-videos-optional">
+   Create Labeled Videos (Optional)
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>How to use the PigeonSuperModel</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-preliminary-settings">
+   Some preliminary settings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-your-local-pigeonsupermodel-project">
+   Create your local PigeonSuperModel project
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#check-project-settings">
+   Check project settings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analyze-new-videos">
+   Analyze new videos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#filter-predictions-optional">
+   Filter Predictions (Optional)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-labeled-videos-optional">
+   Create Labeled Videos (Optional)
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="how-to-use-the-pigeonsupermodel">
+<h1>How to use the PigeonSuperModel<a class="headerlink" href="#how-to-use-the-pigeonsupermodel" title="Permalink to this headline">¶</a></h1>
+<p>Download this notebook in the upper right corner as <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file and start it from within your DeepLabCut environment. If you need to install DeepLabCut first, please check <a class="reference external" href="https://pigeonsupermodel.com/DLC_StudentGuide.html#installation">here</a>.</p>
+<p>This notebook will show you how to create a pretrained project with the PigeonSuperModel using the DeepLabCut ModelZoo to analyze your own pigeon video data:</p>
+<ul class="simple">
+<li><p>Preliminary Settings</p></li>
+<li><p>Create Pretrained Model</p></li>
+<li><p>Model Settings</p></li>
+<li><p>Analyze New Videos</p></li>
+<li><p>Filter Predictions (<strong>optional</strong>)</p></li>
+<li><p>Create Labeled Videos (<strong>optional</strong>)</p></li>
+</ul>
+<div class="section" id="some-preliminary-settings">
+<h2>Some preliminary settings<a class="headerlink" href="#some-preliminary-settings" title="Permalink to this headline">¶</a></h2>
+<p>Remember to start this notebook from within your deeplabcut anaconda environment to have access to the packages below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">urllib</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">deeplabcut</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The PigeonSuperModel is not yet included in the DeepLabCut model zoo, therefore, you will have to download it directly from our <a class="reference external" href="https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel/-/tree/main/models/DeepLabCut">GitLab repository</a>. To do so, you will need to make some small changes in your local DeepLabCut installation directory. The function <code class="docutils literal notranslate"><span class="pre">monkeypatch()</span></code> below helps you do exatly that. First, it locates a file named <code class="docutils literal notranslate"><span class="pre">pretrained_model_urls.yaml</span></code> in your local DeepLabCut installation and adds the new URLs to reach the PigeonSuperModel repository. In a last step, it adds the names of the PigeonSuperModels to the <code class="docutils literal notranslate"><span class="pre">modelzoo.py</span></code> Modeloptions as valid model names. After this, you are all set to use the oficial function <code class="docutils literal notranslate"><span class="pre">deeplabcut.create_pretrained_project()</span></code> to create a pretrained project with the PigeonSuperModel.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This monkeypatch is hopefully outdated soon, when the PigeonSuperModel is officially supported by the DeepLabCut ModelZoo.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">monkeypatch</span><span class="p">():</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    This function locates a file named &#39;pose_estimation_tensorflow/models/pretrained/pretrained_model_urls.yaml&#39; in your local DeepLabCut</span>
+<span class="sd">    installation and adds the new URLs below to reach the PigeonSUperModel repository.</span>
+<span class="sd">    In a last step, the names of the PigeonSuperModels are added to the &#39;modelzoo.py&#39; Modeloptions as valid model names.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="kn">import</span> <span class="nn">os</span>
+    <span class="kn">import</span> <span class="nn">deeplabcut</span>
+    <span class="kn">from</span> <span class="nn">deeplabcut.utils</span> <span class="kn">import</span> <span class="n">auxiliaryfunctions</span>
+    <span class="kn">from</span> <span class="nn">deeplabcut.create_project</span> <span class="kn">import</span> <span class="n">modelzoo</span>
+
+    <span class="c1"># locate the `pretrained_model_urls.yaml` file in your local DeepLabCut installation (hardcoded based on deeplabcut dir structure)</span>
+    <span class="n">neturls_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">auxiliaryfunctions</span><span class="o">.</span><span class="n">get_deeplabcut_path</span><span class="p">(),</span> <span class="s1">&#39;pose_estimation_tensorflow&#39;</span><span class="p">,</span> <span class="s1">&#39;models&#39;</span><span class="p">,</span> <span class="s1">&#39;pretrained&#39;</span><span class="p">,</span> <span class="s1">&#39;pretrained_model_urls.yaml&#39;</span><span class="p">)</span>
+
+    <span class="n">edits</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;PigeonSuperModel_resnet_50&#39;</span><span class="p">:</span>  <span class="s1">&#39;https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel/-/raw/main/models/DeepLabCut/DLC_PigeonSuperModel_01_resnet_50_iteration-2_shuffle-3.tar.gz&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;PigeonSuperModel_resnet_101&#39;</span><span class="p">:</span> <span class="s1">&#39;https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel/-/raw/main/models/DeepLabCut/DLC_PigeonSuperModel_01_resnet_101_iteration-2_shuffle-4.tar.gz&#39;</span><span class="p">,</span> 
+             <span class="s1">&#39;PigeonSuperModel_resnet_152&#39;</span><span class="p">:</span> <span class="s1">&#39;https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel/-/raw/main/models/DeepLabCut/DLC_PigeonSuperModel_01_resnet_152_iteration-2_shuffle-5.tar.gz&#39;</span><span class="p">}</span>
+    
+    <span class="c1"># add new model to the neturls file     </span>
+    <span class="n">deeplabcut</span><span class="o">.</span><span class="n">auxiliaryfunctions</span><span class="o">.</span><span class="n">edit_config</span><span class="p">(</span><span class="n">neturls_path</span><span class="p">,</span> <span class="n">edits</span><span class="p">)</span>
+
+    <span class="c1"># add new model to locally loaded Modeloptions from modelzoo.py</span>
+    <span class="n">modelzoo</span><span class="o">.</span><span class="n">Modeloptions</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">&#39;PigeonSuperModel_resnet_50&#39;</span><span class="p">,</span> <span class="s1">&#39;PigeonSuperModel_resnet_101&#39;</span><span class="p">,</span> <span class="s1">&#39;PigeonSuperModel_resnet_152&#39;</span><span class="p">])</span>
+    
+<span class="c1"># you may need admin rights on your computer to edit the files above</span>
+<span class="n">monkeypatch</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-your-local-pigeonsupermodel-project">
+<h2>Create your local PigeonSuperModel project<a class="headerlink" href="#create-your-local-pigeonsupermodel-project" title="Permalink to this headline">¶</a></h2>
+<p>First, you should start by setting a path to where your project should be created, and giving your new project a salient but short name.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># give it a place to be</span>
+<span class="n">projectpath</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;D:/&#39;</span>
+
+<span class="c1"># give it a name</span>
+<span class="n">projectname</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;My2PigeonSuperModel&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, we will use DeepLabCuts own function <code class="docutils literal notranslate"><span class="pre">deeplabcut.create_pretrained_project()</span></code> to create a pretrained project. Unfortunately, (or maybe by design?) this function assumes you want to directly include your videos to the project <code class="docutils literal notranslate"><span class="pre">videodir</span></code>, which may be not the most efficient way to go when you work with large videos (videos will be copied, not moved, which may take quite a while and use up space unnecessarily.</p>
+<p>My recommendation is to use the cell block below to create a 1-sec dummy video to initialize your pretrained project. Then change any settings you want to in the config file, and finally select the videos you whant to analyze from a different directory to save time and storage.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a dir with pre-trained DLC models</span>
+<span class="n">model_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">projectpath</span><span class="p">,</span> <span class="n">projectname</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">model_dir</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">model_dir</span><span class="p">)</span>
+
+    <span class="c1"># create dummy video</span>
+    <span class="n">logolink</span> <span class="o">=</span> <span class="s1">&#39;https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel/-/raw/main/PigeonSuperModel.png?inline=false&#39;</span>
+    <span class="n">logo</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">model_dir</span><span class="p">,</span> <span class="s1">&#39;logo.png&#39;</span><span class="p">)</span>
+    <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">logolink</span><span class="p">,</span> <span class="n">logo</span><span class="p">);</span>
+
+    <span class="n">dummyvideo</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">model_dir</span><span class="p">,</span> <span class="s1">&#39;logo.mp4&#39;</span><span class="p">)</span>
+    <span class="n">img_array</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">logo</span><span class="p">)</span>
+        <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">layers</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span>
+        <span class="n">img_array</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+
+    <span class="n">out</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoWriter</span><span class="p">(</span><span class="n">dummyvideo</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoWriter_fourcc</span><span class="p">(</span><span class="o">*</span><span class="s1">&#39;mp4v&#39;</span><span class="p">),</span> <span class="mi">20</span><span class="p">,</span> <span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">img_array</span><span class="p">)):</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">img_array</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">out</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+
+    <span class="n">video_path</span> <span class="o">=</span> <span class="n">dummyvideo</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error: The project directory could not be created. See if the model already exists, and check your write permissions on that disk.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now you can create a pretrained DeepLabCut project. If prefere, you could directly create a list of videos to include in the project <code class="docutils literal notranslate"><span class="pre">[video_path]</span></code> and even activate <code class="docutils literal notranslate"><span class="pre">analyzevideo=True</span></code> to start analyzing right away, but I would advise to start slow, and check your settings of your new project first.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create pre-trained model from PigeonSuperModel</span>
+<span class="n">config_path</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">deeplabcut</span><span class="o">.</span><span class="n">create_pretrained_project</span><span class="p">(</span>
+    <span class="n">projectname</span><span class="p">,</span>
+    <span class="s1">&#39;PigeonSuperModel&#39;</span><span class="p">,</span>
+    <span class="p">[</span><span class="n">video_path</span><span class="p">],</span>
+    <span class="n">videotype</span><span class="o">=</span><span class="s1">&#39;mp4&#39;</span><span class="p">,</span>
+    <span class="n">copy_videos</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">working_directory</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">projectpath</span><span class="p">,</span> <span class="n">projectname</span><span class="p">),</span>
+    <span class="n">model</span><span class="o">=</span><span class="s1">&#39;PigeonSuperModel_resnet_152&#39;</span><span class="p">,</span>
+    <span class="n">analyzevideo</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">filtered</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">createlabeledvideo</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># delete dummy videos created before</span>
+<span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">dummyvideo</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">logo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="check-project-settings">
+<h2>Check project settings<a class="headerlink" href="#check-project-settings" title="Permalink to this headline">¶</a></h2>
+<p>Now that you have your local copy of the PigeonSuperModel, you can open your <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> file to check your settings, specially the skeleton and your prefered plotting configuration.
+Alternatively, you can use the function <code class="docutils literal notranslate"><span class="pre">deeplabcut.auxiliaryfunctions.edit_config()</span></code> to pass any changes to the <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> file as below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># manually edit your config.yaml as needed</span>
+<span class="n">edits</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;skeleton&#39;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">[</span><span class="s1">&#39;BT(BeakTip)&#39;</span><span class="p">,</span> <span class="s1">&#39;LC(LowerCere)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;LC(LowerCere)&#39;</span><span class="p">,</span> <span class="s1">&#39;UC(UpperCere)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;UC(UpperCere)&#39;</span><span class="p">,</span> <span class="s1">&#39;H(Head)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;H(Head)&#39;</span><span class="p">,</span> <span class="s1">&#39;LE(LeftEye)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;H(Head)&#39;</span><span class="p">,</span> <span class="s1">&#39;RE(RightEye)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;LE(LeftEye)&#39;</span><span class="p">,</span> <span class="s1">&#39;RE(RightEye)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;LE(LeftEye)&#39;</span><span class="p">,</span> <span class="s1">&#39;UC(UpperCere)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;LE(LeftEye)&#39;</span><span class="p">,</span> <span class="s1">&#39;UN(UpperNeck)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;RE(RightEye)&#39;</span><span class="p">,</span> <span class="s1">&#39;UC(UpperCere)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;RE(RightEye)&#39;</span><span class="p">,</span> <span class="s1">&#39;UN(UpperNeck)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;LE(LeftEye)&#39;</span><span class="p">,</span> <span class="s1">&#39;C(Chin)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;RE(RightEye)&#39;</span><span class="p">,</span> <span class="s1">&#39;C(Chin)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;H(Head)&#39;</span><span class="p">,</span> <span class="s1">&#39;UN(UpperNeck)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;UN(UpperNeck)&#39;</span><span class="p">,</span> <span class="s1">&#39;UHN(UpperHalfNeck)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;UHN(UpperHalfNeck)&#39;</span><span class="p">,</span> <span class="s1">&#39;MN(MiddleNeck)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;MN(MiddleNeck)&#39;</span><span class="p">,</span> <span class="s1">&#39;LHN(LowerHalfNeck)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;LHN(LowerHalfNeck)&#39;</span><span class="p">,</span> <span class="s1">&#39;US(UpperSpine=LN)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;US(UpperSpine=LN)&#39;</span><span class="p">,</span> <span class="s1">&#39;UHS(UpperHalfSpine)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;UHS(UpperHalfSpine)&#39;</span><span class="p">,</span> <span class="s1">&#39;MS(MiddleSpine)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;MS(MiddleSpine)&#39;</span><span class="p">,</span> <span class="s1">&#39;LHS(LowerHalfSpine)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;LHS(LowerHalfSpine)&#39;</span><span class="p">,</span> <span class="s1">&#39;LS(LowerSpine)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;LS(LowerSpine)&#39;</span><span class="p">,</span> <span class="s1">&#39;TC(TailCenter)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;LS(LowerSpine)&#39;</span><span class="p">,</span> <span class="s1">&#39;TL(TailLeft)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;LS(LowerSpine)&#39;</span><span class="p">,</span> <span class="s1">&#39;TR(TailRight)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;TL(TailLeft)&#39;</span><span class="p">,</span> <span class="s1">&#39;TC(TailCenter)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;TC(TailCenter)&#39;</span><span class="p">,</span> <span class="s1">&#39;TR(TailRight)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;US(UpperSpine=LN)&#39;</span><span class="p">,</span> <span class="s1">&#39;LWS(LeftWingShoulder)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;LWS(LeftWingShoulder)&#39;</span><span class="p">,</span> <span class="s1">&#39;LWE(LeftWingElbow)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;LWE(LeftWingElbow)&#39;</span><span class="p">,</span> <span class="s1">&#39;LWW(LeftWingWriwst)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;LWW(LeftWingWriwst)&#39;</span><span class="p">,</span> <span class="s1">&#39;LWT(LeftWingTip)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;US(UpperSpine=LN)&#39;</span><span class="p">,</span> <span class="s1">&#39;RWS(RightWingShoulder)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;RWS(RightWingShoulder)&#39;</span><span class="p">,</span> <span class="s1">&#39;RWE(RightWingElbow)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;RWE(RightWingElbow)&#39;</span><span class="p">,</span> <span class="s1">&#39;RWW(RightWingWriwst)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;RWW(RightWingWriwst)&#39;</span><span class="p">,</span> <span class="s1">&#39;RWT(RightWingTip)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;LWS(LeftWingShoulder)&#39;</span><span class="p">,</span> <span class="s1">&#39;LC(LeftChest)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;LC(LeftChest)&#39;</span><span class="p">,</span> <span class="s1">&#39;LHC(LeftHalfChest)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;LHC(LeftHalfChest)&#39;</span><span class="p">,</span> <span class="s1">&#39;MC(MiddleChest)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;MC(MiddleChest)&#39;</span><span class="p">,</span> <span class="s1">&#39;RHC(RightHalfChest)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;RHC(RightHalfChest)&#39;</span><span class="p">,</span> <span class="s1">&#39;RC(RightChest)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;RC(RightChest)&#39;</span><span class="p">,</span> <span class="s1">&#39;RWS(RightWingShoulder)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;MC(MiddleChest)&#39;</span><span class="p">,</span> <span class="s1">&#39;MT(MiddleThroat)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;MT(MiddleThroat)&#39;</span><span class="p">,</span> <span class="s1">&#39;C(Chin)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;C(Chin)&#39;</span><span class="p">,</span> <span class="s1">&#39;BT(BeakTip)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;RF(RightFoot)&#39;</span><span class="p">,</span> <span class="s1">&#39;RA(RightAnkle)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;RA(RightAnkle)&#39;</span><span class="p">,</span> <span class="s1">&#39;RT(RightTibia)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;RT(RightTibia)&#39;</span><span class="p">,</span> <span class="s1">&#39;RWS(RightWingShoulder)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;RT(RightTibia)&#39;</span><span class="p">,</span> <span class="s1">&#39;LS(LowerSpine)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;RT(RightTibia)&#39;</span><span class="p">,</span> <span class="s1">&#39;MC(MiddleChest)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;LF(LeftFoot)&#39;</span><span class="p">,</span> <span class="s1">&#39;LA(LeftAnkle)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;LA(LeftAnkle)&#39;</span><span class="p">,</span> <span class="s1">&#39;LT(LeftTibia)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;LT(LeftTibia)&#39;</span><span class="p">,</span> <span class="s1">&#39;LWS(LeftWingShoulder)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;LT(LeftTibia)&#39;</span><span class="p">,</span> <span class="s1">&#39;LS(LowerSpine)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;LT(LeftTibia)&#39;</span><span class="p">,</span> <span class="s1">&#39;MC(MiddleChest)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;RC(RightChest)&#39;</span><span class="p">,</span> <span class="s1">&#39;MT(MiddleThroat)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;LC(LeftChest)&#39;</span><span class="p">,</span> <span class="s1">&#39;MT(MiddleThroat)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;LHC(LeftHalfChest)&#39;</span><span class="p">,</span> <span class="s1">&#39;MT(MiddleThroat)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;RHC(RightHalfChest)&#39;</span><span class="p">,</span> <span class="s1">&#39;MT(MiddleThroat)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;C(Chin)&#39;</span><span class="p">,</span> <span class="s1">&#39;LHC(LeftHalfChest)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;C(Chin)&#39;</span><span class="p">,</span> <span class="s1">&#39;RHC(RightHalfChest)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;C(Chin)&#39;</span><span class="p">,</span> <span class="s1">&#39;LC(LeftChest)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;C(Chin)&#39;</span><span class="p">,</span> <span class="s1">&#39;RC(RightChest)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;C(Chin)&#39;</span><span class="p">,</span> <span class="s1">&#39;LWS(LeftWingShoulder)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;C(Chin)&#39;</span><span class="p">,</span> <span class="s1">&#39;RWS(RightWingShoulder)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;US(UpperSpine=LN)&#39;</span><span class="p">,</span> <span class="s1">&#39;RWT(RightWingTip)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;RWS(RightWingShoulder)&#39;</span><span class="p">,</span> <span class="s1">&#39;RWT(RightWingTip)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;RWE(RightWingElbow)&#39;</span><span class="p">,</span> <span class="s1">&#39;RWT(RightWingTip)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;US(UpperSpine=LN)&#39;</span><span class="p">,</span> <span class="s1">&#39;LWT(LeftWingTip)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;LWS(LeftWingShoulder)&#39;</span><span class="p">,</span> <span class="s1">&#39;LWT(LeftWingTip)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;LWE(LeftWingElbow)&#39;</span><span class="p">,</span> <span class="s1">&#39;LWT(LeftWingTip)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;RT(RightTibia)&#39;</span><span class="p">,</span> <span class="s1">&#39;RC(RightChest)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;RT(RightTibia)&#39;</span><span class="p">,</span> <span class="s1">&#39;RHC(RightHalfChest)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;LT(LeftTibia)&#39;</span><span class="p">,</span> <span class="s1">&#39;LC(LeftChest)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;LT(LeftTibia)&#39;</span><span class="p">,</span> <span class="s1">&#39;LHC(LeftHalfChest)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;RWS(RightWingShoulder)&#39;</span><span class="p">,</span> <span class="s1">&#39;TR(TailRight)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;LWS(LeftWingShoulder)&#39;</span><span class="p">,</span> <span class="s1">&#39;TL(TailLeft)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;UN(UpperNeck)&#39;</span><span class="p">,</span> <span class="s1">&#39;RWS(RightWingShoulder)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;UN(UpperNeck)&#39;</span><span class="p">,</span> <span class="s1">&#39;RWE(RightWingElbow)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;UN(UpperNeck)&#39;</span><span class="p">,</span> <span class="s1">&#39;LWS(LeftWingShoulder)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;UN(UpperNeck)&#39;</span><span class="p">,</span> <span class="s1">&#39;LWE(LeftWingElbow)&#39;</span><span class="p">],</span> 
+        <span class="p">[</span><span class="s1">&#39;UN(UpperNeck)&#39;</span><span class="p">,</span> <span class="s1">&#39;UHN(UpperHalfNeck)&#39;</span><span class="p">],</span>
+        <span class="p">],</span>
+    <span class="s1">&#39;dotsize&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>  <span class="c1"># size of the dots!</span>
+    <span class="s1">&#39;colormap&#39;</span><span class="p">:</span> <span class="s1">&#39;inferno&#39;</span><span class="p">,</span>  <span class="c1"># any matplotlib colormap!</span>
+    <span class="s1">&#39;pcutoff&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>  <span class="c1"># the higher the threshold, the more conservative the plotting!</span>
+<span class="p">}</span>
+
+<span class="c1"># write new skeleton into config.yaml file</span>
+<span class="n">deeplabcut</span><span class="o">.</span><span class="n">auxiliaryfunctions</span><span class="o">.</span><span class="n">edit_config</span><span class="p">(</span><span class="n">config_path</span><span class="p">,</span> <span class="n">edits</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="analyze-new-videos">
+<h2>Analyze new videos<a class="headerlink" href="#analyze-new-videos" title="Permalink to this headline">¶</a></h2>
+<p>Now that your new pretrained project is ready to go, you can start analyzing your own videos. You could open the project from the GUI in anaconda with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">deeplabcut</span></code>, or just run the analysis from this notebook. To analyze selected videos create a <code class="docutils literal notranslate"><span class="pre">videolist</span></code>, and to analyze all videos within a given directory, pass the <code class="docutils literal notranslate"><span class="pre">videodir</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define a list of videos</span>
+<span class="n">videolist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">computername</span><span class="se">\\</span><span class="s1">Videos</span><span class="se">\\</span><span class="s1">reachingvideo1.avi&#39;</span><span class="p">,</span> 
+            <span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">computername</span><span class="se">\\</span><span class="s1">Videos</span><span class="se">\\</span><span class="s1">reachingvideo2.avi&#39;</span><span class="p">,</span> 
+            <span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">computername</span><span class="se">\\</span><span class="s1">Videos</span><span class="se">\\</span><span class="s1">reachingvideo3.avi&#39;</span><span class="p">]</span>
+
+<span class="c1"># define entire video virectory</span>
+<span class="n">videodir</span> <span class="o">=</span> <span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">computername</span><span class="se">\\</span><span class="s1">Videos&#39;</span>
+
+<span class="c1"># define output directory for DLC outputs</span>
+<span class="n">outputdir</span> <span class="o">=</span> <span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">computername</span><span class="se">\\</span><span class="s1">DLC_Outputs&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># analyze list of videos</span>
+<span class="n">deeplabcut</span><span class="o">.</span><span class="n">analyze_videos</span><span class="p">(</span><span class="n">config_path</span><span class="p">,</span> <span class="n">videolist</span><span class="p">,</span> <span class="n">save_as_csv</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">destfolder</span><span class="o">=</span><span class="n">outputdir</span><span class="p">,</span> <span class="n">videotype</span><span class="o">=</span><span class="s1">&#39;mp4&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># analyze entire directory</span>
+<span class="n">deeplabcut</span><span class="o">.</span><span class="n">analyze_videos</span><span class="p">(</span><span class="n">config_path</span><span class="p">,</span> <span class="p">[</span><span class="n">videodir</span><span class="p">],</span> <span class="n">save_as_csv</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">destfolder</span><span class="o">=</span><span class="n">outputdir</span><span class="p">,</span> <span class="n">videotype</span><span class="o">=</span><span class="s1">&#39;mp4&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="filter-predictions-optional">
+<h2>Filter Predictions (Optional)<a class="headerlink" href="#filter-predictions-optional" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deeplabcut</span><span class="o">.</span><span class="n">filterpredictions</span><span class="p">(</span><span class="n">config_path</span><span class="p">,</span> <span class="n">videolist</span><span class="p">,</span> <span class="n">videotype</span><span class="o">=</span><span class="s1">&#39;mp4&#39;</span><span class="p">,</span> <span class="n">filtertype</span><span class="o">=</span> <span class="s1">&#39;arima&#39;</span><span class="p">,</span> <span class="n">ARdegree</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">MAdegree</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-labeled-videos-optional">
+<h2>Create Labeled Videos (Optional)<a class="headerlink" href="#create-labeled-videos-optional" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deeplabcut</span><span class="o">.</span><span class="n">create_labeled_video</span><span class="p">(</span><span class="n">config_path</span><span class="p">,</span> <span class="n">videolist</span><span class="p">,</span> <span class="n">videotype</span><span class="o">=</span><span class="s1">&#39;mp4&#39;</span><span class="p">,</span> <span class="n">filtered</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">trailpoints</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">draw_skeleton</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">keypoints_only</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">deeplabcut</span><span class="o">.</span><span class="n">plot_trajectories</span><span class="p">(</span><span class="n">config_path</span><span class="p">,</span> <span class="n">videolist</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="DeepLabCut.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">DeepLabCut</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="DLC_StudentGuide.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">DeepLabCut - <em>A Student’s Quick Start Guide</em></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Guillermo Hidalgo Gadea & Sarah C. Möser, IKN, Ruhr-University Bochum<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -52,7 +52,7 @@
     <link rel="shortcut icon" href="_static/icon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="SLEAP" href="SLEAP.html" />
+    <link rel="next" title="How to use the PigeonSuperModel" href="HowToPigeonSuperModel.html" />
     <link rel="prev" title="Tutorial" href="Tutorial.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -123,22 +123,34 @@
    </i>
   </label>
   <ul class="current">
-   <li class="toctree-l2 current active">
+   <li class="toctree-l2 current active has-children">
     <a class="current reference internal" href="#">
      DeepLabCut
     </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="HowToPigeonSuperModel.html">
+       How to use the PigeonSuperModel
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="DLC_StudentGuide.html">
+       DeepLabCut -
+       <em>
+        A Student’s Quick Start Guide
+       </em>
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="SLEAP.html">
      SLEAP
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="DLC_StudentGuide.html">
-     DeepLabCut -
-     <em>
-      A Student’s Quick Start Guide
-     </em>
     </a>
    </li>
   </ul>
@@ -251,18 +263,33 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-the-deeplabcut-model-zoo">
-   Using the DeepLabCut Model Zoo
+  <a class="reference internal nav-link" href="#how-to-use-the-pigeonsupermodel">
+   How to use the PigeonSuperModel
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-the-provided-dataset-to-train-your-own-model">
-   Using the provided dataset to train your own model
+  <a class="reference internal nav-link" href="#extract-outlier-frames-and-re-train-the-pigeonsupermodel">
+   Extract Outlier Frames and re-train the PigeonSuperModel
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adapting-the-model-to-your-experimental-setup">
-   Adapting the model to your experimental setup
+  <a class="reference internal nav-link" href="#how-to-use-the-pigeonsupermodel-dataset">
+   How to use the PigeonSuperModel Dataset
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-students-quick-start-guide">
+   A Student’s Quick Start Guide
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-anipose-for-3d-pose-reconstruction">
+   Using Anipose for 3D Pose reconstruction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#locomotion-tracking-in-pigeons">
+   Locomotion tracking in Pigeons
   </a>
  </li>
 </ul>
@@ -286,18 +313,33 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-the-deeplabcut-model-zoo">
-   Using the DeepLabCut Model Zoo
+  <a class="reference internal nav-link" href="#how-to-use-the-pigeonsupermodel">
+   How to use the PigeonSuperModel
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-the-provided-dataset-to-train-your-own-model">
-   Using the provided dataset to train your own model
+  <a class="reference internal nav-link" href="#extract-outlier-frames-and-re-train-the-pigeonsupermodel">
+   Extract Outlier Frames and re-train the PigeonSuperModel
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adapting-the-model-to-your-experimental-setup">
-   Adapting the model to your experimental setup
+  <a class="reference internal nav-link" href="#how-to-use-the-pigeonsupermodel-dataset">
+   How to use the PigeonSuperModel Dataset
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-students-quick-start-guide">
+   A Student’s Quick Start Guide
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-anipose-for-3d-pose-reconstruction">
+   Using Anipose for 3D Pose reconstruction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#locomotion-tracking-in-pigeons">
+   Locomotion tracking in Pigeons
   </a>
  </li>
 </ul>
@@ -311,29 +353,43 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="deeplabcut">
 <h1>DeepLabCut<a class="headerlink" href="#deeplabcut" title="Permalink to this headline">¶</a></h1>
-<p>There are several ways to use the PigeonSuperModel in DeepLabCut.</p>
-<div class="section" id="using-the-deeplabcut-model-zoo">
-<h2>Using the DeepLabCut Model Zoo<a class="headerlink" href="#using-the-deeplabcut-model-zoo" title="Permalink to this headline">¶</a></h2>
-<p>The easiest way to use our models is to download them directly from the DeepLabCut Model Zoo.</p>
+<div class="section" id="how-to-use-the-pigeonsupermodel">
+<h2>How to use the PigeonSuperModel<a class="headerlink" href="#how-to-use-the-pigeonsupermodel" title="Permalink to this headline">¶</a></h2>
+<p>The easiest way to use our pre-trained models is to download them with DeepLabCut ModelZoo. <a class="reference internal" href="HowToPigeonSuperModel.html"><span class="doc std std-doc">This notebook</span></a> will show you how to do that.</p>
+</div>
+<div class="section" id="extract-outlier-frames-and-re-train-the-pigeonsupermodel">
+<h2>Extract Outlier Frames and re-train the PigeonSuperModel<a class="headerlink" href="#extract-outlier-frames-and-re-train-the-pigeonsupermodel" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This option is not yet available, but we have come up with a solution that will allow you to use our models as if they already were included into the Model Zoo.</p>
-<p>To do so, use <a class="reference external" href="https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel/-/tree/main/models/DeepLabCut">this link</a> to download the pre-trained model of your choice (<code class="docutils literal notranslate"><span class="pre">resnet-50</span></code>, <code class="docutils literal notranslate"><span class="pre">resnet-101</span></code> or <code class="docutils literal notranslate"><span class="pre">resnet-152</span></code>).</p>
-<p>Then download this Jupyter Notebook to start analyzing your data.</p>
+<p>This section is coming soon.</p>
 </div>
 </div>
-<div class="section" id="using-the-provided-dataset-to-train-your-own-model">
-<h2>Using the provided dataset to train your own model<a class="headerlink" href="#using-the-provided-dataset-to-train-your-own-model" title="Permalink to this headline">¶</a></h2>
-<p>You can of course also use our dataset, to train novel DeepLabCut models.</p>
+<div class="section" id="how-to-use-the-pigeonsupermodel-dataset">
+<h2>How to use the PigeonSuperModel Dataset<a class="headerlink" href="#how-to-use-the-pigeonsupermodel-dataset" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section is coming soon.</p>
 </div>
-<div class="section" id="adapting-the-model-to-your-experimental-setup">
-<h2>Adapting the model to your experimental setup<a class="headerlink" href="#adapting-the-model-to-your-experimental-setup" title="Permalink to this headline">¶</a></h2>
-<!---Add labels / Train reference model?--->
-<p>If you’ve wondered how you could adapt the Pigeon Super Model to your own experimental setup and include novel labels for specific key features, here is the answer you have been looking for:</p>
-<p>First of all, we would not recommend adding new labels to the original Pigeon Super Model.</p>
-<p>As a solution for this issue, we recommend training a novel DeepLabCut model to recognize only the surrounding of your experiment, excluding the pigeon.<br />
-If you filmed your video data from a stable perspective so that the background hardly ever changes throughout your videos, the manual labeling task for this separate model will not take long (as you can copy-and-paste the labels for almost all your frames).</p>
-<p>After training this reference model sufficiently, the analysis results of both models can be merged, generating output labels for both, the pigeon and your experimental setup’s key features.</p>
+</div>
+<div class="section" id="a-students-quick-start-guide">
+<h2>A Student’s Quick Start Guide<a class="headerlink" href="#a-students-quick-start-guide" title="Permalink to this headline">¶</a></h2>
+<p>Check our <a class="reference internal" href="DLC_StudentGuide.html"><span class="doc std std-doc">DeepLabCut Guide</span></a> and our seminar website on <a class="reference external" href="https://guillermo-hidalgo-gadea.github.io/Seminar-TrackingAnimalBehavior/intro.html">Tracking Animal Behavior</a> at the Ruhr University Bochum with some useful tipps for <a class="reference external" href="https://guillermo-hidalgo-gadea.github.io/Seminar-TrackingAnimalBehavior/Exercise3.html#troubleshooting">troubleshooting</a> your DeepLabCut projects.</p>
+</div>
+<div class="section" id="using-anipose-for-3d-pose-reconstruction">
+<h2>Using Anipose for 3D Pose reconstruction<a class="headerlink" href="#using-anipose-for-3d-pose-reconstruction" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section is coming soon.</p>
+</div>
+</div>
+<div class="section" id="locomotion-tracking-in-pigeons">
+<h2>Locomotion tracking in Pigeons<a class="headerlink" href="#locomotion-tracking-in-pigeons" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section is coming soon.</p>
+</div>
+</div>
+<div class="toctree-wrapper compound">
 </div>
 </div>
 
@@ -369,10 +425,10 @@ If you filmed your video data from a stable perspective so that the background h
             <p class="prev-next-title">Tutorial</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="SLEAP.html" title="next page">
+    <a class='right-next' id="next-link" href="HowToPigeonSuperModel.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">SLEAP</p>
+        <p class="prev-next-title">How to use the PigeonSuperModel</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
