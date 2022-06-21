@@ -6,8 +6,10 @@ chapters:
 - file: Tutorial
   sections:
   - file: DeepLabCut
+    sections:
+    - file: HowToPigeonSuperModel
+    - file: DLC_StudentGuide
   - file: SLEAP
-  - file: DLC_StudentGuide
 - url: https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel
   title: GitLab
 - url: https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel/-/releases

@@ -1,32 +1,35 @@
 # DeepLabCut
 
-There are several ways to use the PigeonSuperModel in DeepLabCut.
 
-## Using the DeepLabCut Model Zoo
+## How to use the PigeonSuperModel
 
-The easiest way to use our models is to download them directly from the DeepLabCut Model Zoo.
+The easiest way to use our pre-trained models is to download them with DeepLabCut ModelZoo. [This notebook](HowToPigeonSuperModel.ipynb) will show you how to do that.
+
+
+## Extract Outlier Frames and re-train the PigeonSuperModel
 
 :::{note}
-This option is not yet available, but we have come up with a solution that will allow you to use our models as if they already were included into the Model Zoo.
-
-To do so, use [this link](https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel/-/tree/main/models/DeepLabCut) to download the pre-trained model of your choice (`resnet-50`, `resnet-101` or `resnet-152`).
-
-Then download this Jupyter Notebook to start analyzing your data.
+This section is coming soon.
 :::
 
-## Using the provided dataset to train your own model
+## How to use the PigeonSuperModel Dataset
 
-You can of course also use our dataset, to train novel DeepLabCut models.
+:::{note}
+This section is coming soon.
+:::
 
-## Adapting the model to your experimental setup
+## A Student’s Quick Start Guide
 
-<!---Add labels / Train reference model?--->
+Check our [DeepLabCut Guide](DLC_StudentGuide.ipynb) and our seminar website on [Tracking Animal Behavior](https://guillermo-hidalgo-gadea.github.io/Seminar-TrackingAnimalBehavior/intro.html) at the Ruhr University Bochum with some useful tipps for [troubleshooting](https://guillermo-hidalgo-gadea.github.io/Seminar-TrackingAnimalBehavior/Exercise3.html#troubleshooting) your DeepLabCut projects.
 
-If you've wondered how you could adapt the Pigeon Super Model to your own experimental setup and include novel labels for specific key features, here is the answer you have been looking for:
+## Using Anipose for 3D Pose reconstruction
 
-First of all, we would not recommend adding new labels to the original Pigeon Super Model.
+:::{note}
+This section is coming soon.
+:::
 
-As a solution for this issue, we recommend training a novel DeepLabCut model to recognize only the surrounding of your experiment, excluding the pigeon.  
-If you filmed your video data from a stable perspective so that the background hardly ever changes throughout your videos, the manual labeling task for this separate model will not take long (as you can copy-and-paste the labels for almost all your frames).
+## Locomotion tracking in Pigeons
 
-After training this reference model sufficiently, the analysis results of both models can be merged, generating output labels for both, the pigeon and your experimental setup's key features.
+:::{note}
+This section is coming soon.
+:::
