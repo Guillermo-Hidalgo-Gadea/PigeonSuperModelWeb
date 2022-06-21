@@ -9,6 +9,8 @@ chapters:
     sections:
     - file: HowToPigeonSuperModel
     - file: DLC_StudentGuide
+    - file: UsingAnipose3D
+    - file: LocomotionTrackingPigeon
   - file: SLEAP
 - url: https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel
   title: GitLab
