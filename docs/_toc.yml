@@ -8,6 +8,7 @@ chapters:
   - file: DeepLabCut
     sections:
     - file: HowToPigeonSuperModel
+    - file: HowToPigeonSuperModelDataset
     - file: DLC_StudentGuide
     - file: UsingAnipose3D
     - file: LocomotionTrackingPigeon

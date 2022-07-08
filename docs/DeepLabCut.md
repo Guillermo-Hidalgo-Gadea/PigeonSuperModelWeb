@@ -7,22 +7,16 @@ The easiest way to use our pre-trained models is to download them with DeepLabCu
 
 * [How to use the PigeonSuperModel](HowToPigeonSuperModel.ipynb)
 
-
-## Extract Outlier Frames and re-Train the PigeonSuperModel
-
-:::{note}
-This section is coming soon.
-:::
-
 ## How to use the PigeonSuperModel Dataset
 
-:::{note}
-This section is coming soon.
-:::
+You want more? After creating your own PigeonSuperModel project and labeling some frames of your own, you can download and merge our entire labeled dataset for free to increse the size of your own training dataset. Check out the the step by step guide in the notebook below:
+
+* [How to use the PigeonSuperModel Dataset](HowToPigeonSuperModelDataset.ipynb)
 
 ## DeepLabCut Guides and HowTos
 
 Need some further help? Check our step by step guide:
+
 * [DeepLabCut - A Student’s Quick Start Guide](DLC_StudentGuide.ipynb)
 
 You can also brows some of our seminar websites on [Tracking Animal Behavior](https://guillermo-hidalgo-gadea.github.io/Seminar-TrackingAnimalBehavior/intro.html) and [Computational Ethology](https://guillermo-hidalgo-gadea.github.io/Seminar-ComputationalEthology/intro.html) at the Ruhr University Bochum.
