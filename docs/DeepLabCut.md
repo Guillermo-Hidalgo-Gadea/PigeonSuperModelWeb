@@ -1,6 +1,5 @@
 # DeepLabCut
 
-
 ## How to use the PigeonSuperModel
 
 The easiest way to use our pre-trained models is to download them with DeepLabCut ModelZoo. This notebook will show you how to do that:
@@ -23,7 +22,7 @@ You can also brows some of our seminar websites on [Tracking Animal Behavior](ht
 
 ## Using Anipose for 3D Pose Reconstruction
 
-Why stop at 2D tracking when your tracked animals move in 3D space? Pigeons in particular have a naturally upright pose, which makes 2D poses often hard to interprete. Here we provide a short introduction on how to use [Anipose](https://anipose.readthedocs.io/en/latest/) to upgrade your DeepLabCut projects for 3D pose reconstruction:
+Why stop at 2D tracking when your tracked animals move in 3D space? Pigeons in particular have a naturally upright pose, which makes 2D poses often hard to interpret. For some help on multi-camera recording see [syncFLIR](https://gitlab.ruhr-uni-bochum.de/ikn/syncflir) and [JARVIS](https://jarvis-mocap.github.io/jarvis-docs//2021-10-29-manual.html#designing-a-3d-motion-capture-setup). Here we provide a short introduction on how to use [Anipose](https://anipose.readthedocs.io/en/latest/) to upgrade your DeepLabCut projects for 3D pose reconstruction:
 
 * [Using Anipose for 3D Pose Reconstruction](UsingAnipose3D.ipynb)
 

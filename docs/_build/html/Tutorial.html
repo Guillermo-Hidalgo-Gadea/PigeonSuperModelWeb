@@ -123,22 +123,44 @@
    </i>
   </label>
   <ul>
-   <li class="toctree-l2">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="DeepLabCut.html">
      DeepLabCut
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="HowToPigeonSuperModel.html">
+       How to use the PigeonSuperModel
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="DLC_StudentGuide.html">
+       DeepLabCut -
+       <em>
+        A Student’s Quick Start Guide
+       </em>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="UsingAnipose3D.html">
+       Using Anipose for 3D Pose Reconstruction
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="LocomotionTrackingPigeon.html">
+       Locomotion tracking in Pigeons
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="SLEAP.html">
      SLEAP
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="DLC_StudentGuide.html">
-     DeepLabCut -
-     <em>
-      A Student’s Quick Start Guide
-     </em>
     </a>
    </li>
   </ul>
@@ -317,22 +339,23 @@
 <h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="how-to-use-the-pigeonsupermodel">
 <h2>How to use the PigeonSuperModel<a class="headerlink" href="#how-to-use-the-pigeonsupermodel" title="Permalink to this headline">¶</a></h2>
-<p>On the next pages we show you how to use the pre-trained models on your own data. In short, we will cover the following steps:</p>
+<p>On the next pages we show you how to use the pre-trained models on your own data.</p>
+<p>In short, you will have to:</p>
 <ol class="simple">
 <li><p><em>Download</em> your PigeonSuperModel of choice</p></li>
-<li><p><em>Create</em> a new pre-trained model with your own data</p></li>
 <li><p><em>Analyze</em> your videos (GPU recommended)</p></li>
-<li><p><em>Extract and refine</em> outlier frames</p></li>
-<li><p><em>Re-train</em> the model with your expanded dataset</p></li>
-<li><p><em>Submit</em> your new PigeonSuperModel to <a class="reference external" href="https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel">GitLab</a></p></li>
+<li><p><em>Extract and refine</em> outlier frames (<strong>optional</strong>)</p></li>
+<li><p><em>Re-train</em> the model with your expanded dataset (<strong>optional</strong>)</p></li>
+<li><p><em>Submit</em> your new PigeonSuperModel to <a class="reference external" href="https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel">GitLab</a> (<strong>optional</strong>)</p></li>
 </ol>
-<p>If you need any further help with DeepLabCut beyond the code snippets provided, just <a class="reference internal" href="GetInTouch.html"><span class="doc std std-doc">get in touch</span></a>, we are happy to point you in the right direction and recommend our favorite beginner friendly tutorials.</p>
-<p>We started the PigeonSuperModel in <a class="reference external" href="https://deeplabcut.github.io/DeepLabCut">DeepLabCut</a>, so this has been our software of choice for a while now. Only after finishing the first models we decided to make the dataset systems agnostic and include further models, so the entire project may still be a little skewed towards DeepLabCut. Although we certainly recommend DeepLabCut as a great open source toolbox for markerless pose tracking, we want to acknowledge new, very promising approaches being released every few months.
-Especially, but not exclusively, <a class="reference external" href="https://sleap.ai/">SLEAP</a> for fast model training and multi-animal tracking, and <a class="reference external" href="https://jarvis-mocap.github.io/jarvis-docs/">JARVIS</a> for training 3D-CNN instead of 2D-CNNs with post-hoc triangulation. Let us know what system you prefer and help us include it in the PigeonSuperModel.</p>
 <div class="section" id="deeplabcut">
 <h3>DeepLabCut<a class="headerlink" href="#deeplabcut" title="Permalink to this headline">¶</a></h3>
-<p>There are different options to use the PigeonSuperModel in DeepLabCut that are covered on the next page. We also provide beginner friendly jupyter notebooks to guide you through the entire analysis and model-refinement process.</p>
-<p>Click <strong><a class="reference internal" href="DeepLabCut.html"><span class="doc std std-doc">here</span></a></strong> for the DeepLabCut tutorial.</p>
+<p>In the <strong><a class="reference internal" href="DeepLabCut.html"><span class="doc std std-doc">next pages</span></a></strong> we provide you with commented jupyter notebooks to guide you through the entire process.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We started the PigeonSuperModel in <a class="reference external" href="https://deeplabcut.github.io/DeepLabCut">DeepLabCut</a>, so this has been our software of choice for a while now. Only after finishing the first models we decided to make the dataset systems agnostic and include further models, so the entire project may still be a little skewed towards DeepLabCut. Although we certainly recommend DeepLabCut as a great open source toolbox for markerless pose tracking, we want to acknowledge new, very promising approaches being released every few months.
+Especially, but not exclusively, <a class="reference external" href="https://sleap.ai/">SLEAP</a> for fast model training and multi-animal tracking, and <a class="reference external" href="https://jarvis-mocap.github.io/jarvis-docs/">JARVIS</a> for training 3D-CNN instead of 2D-CNNs with post-hoc triangulation. Let us know what system you prefer and help us include it in the PigeonSuperModel.</p>
+</div>
 </div>
 <div class="section" id="sleap">
 <h3>SLEAP<a class="headerlink" href="#sleap" title="Permalink to this headline">¶</a></h3>
