@@ -7,7 +7,7 @@
 ```jupyter-book build docs```
 
 ### Pubish Book
-``` ghp-import -n -p -f docs/_build/html```
+```ghp-import -n -p -f docs/_build/html```
 
 ### Change page domain in github
 
