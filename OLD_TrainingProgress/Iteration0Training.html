@@ -1,0 +1,477 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Training: iteration-0 &#8212; Pigeon Super Model</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/icon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/PigeonSuperModel.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Pigeon Super Model</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Tutorial.html">
+   Tutorials
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://www.ruhr-uni-bochum.de/biopsy/members.html">
+   GetInTouch
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/OLD_TrainingProgress/Iteration0Training.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel/issues/new?title=Issue%20on%20page%20%2FOLD_TrainingProgress/Iteration0Training.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#initial-video-data">
+   Initial video data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stopsignalparadigm-6-videos">
+   StopSignalParadigm (6 videos)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#imagingskinnerbox-6-videos">
+   ImagingSkinnerbox (6 videos)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hexagonalarena-6-videos">
+   HexagonalArena (6 videos)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-preprocessing">
+   Video Preprocessing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#training-dataset-iteration-0">
+   Training Dataset (iteration-0)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hints-tricks-for-the-labeling-process-move-to-tutorial-section">
+     Hints &amp; Tricks for the Labeling Process &lt;!—MOVE TO TUTORIAL SECTION—&gt;
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#training-dataset-composition">
+     Training Dataset Composition
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Training: iteration-0</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#initial-video-data">
+   Initial video data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stopsignalparadigm-6-videos">
+   StopSignalParadigm (6 videos)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#imagingskinnerbox-6-videos">
+   ImagingSkinnerbox (6 videos)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hexagonalarena-6-videos">
+   HexagonalArena (6 videos)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-preprocessing">
+   Video Preprocessing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#training-dataset-iteration-0">
+   Training Dataset (iteration-0)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hints-tricks-for-the-labeling-process-move-to-tutorial-section">
+     Hints &amp; Tricks for the Labeling Process &lt;!—MOVE TO TUTORIAL SECTION—&gt;
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#training-dataset-composition">
+     Training Dataset Composition
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="training-iteration-0">
+<h1>Training: iteration-0<a class="headerlink" href="#training-iteration-0" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This jupyter book is a work in progress. This page will shortly be extended.</p>
+</div>
+<div class="section" id="initial-video-data">
+<h2>Initial video data<a class="headerlink" href="#initial-video-data" title="Permalink to this headline">¶</a></h2>
+<p>For the initial model (first training iteration/ iteration_0), we included a total amount of 18 videos, deriving from different experiments that are conducted at the Lab for Biopsychology of the Ruhr University Bochum. The videos show pigeons behaving in different experimental setups as they participate in each experiment.</p>
+<p>The experimental setups, video acquisition and preprocessing of videos are described below.</p>
+</div>
+<div class="section" id="stopsignalparadigm-6-videos">
+<h2>StopSignalParadigm (6 videos)<a class="headerlink" href="#stopsignalparadigm-6-videos" title="Permalink to this headline">¶</a></h2>
+<p>The first experimental setup consists of a conventional skinnerbox, equipped with diverse pecking keys and a feeder apparatus, that is used to train the pigeons in a stop signal paradigm and stop change paradigm, respectively.<br />
+In this setup, the pigeon’s behavior is captured from two different camera angles simultaneously. Two representative frames for each camera are depicted below. It is to be noted that in this setup it can come to partly occlusions of the points of interest due to the pigeon moving out of the picture (see perspective camB).</p>
+<!---add TABLE--->
+<p>For the first training iteration, we included six videos from this experiment into the project – three videos per camera. The videos were filmed using GoPro HERO5 cameras.<br />
+Two of the initially included videos later were excluded from the project due to insufficient meta data (date of acquisition, pigeon identity, etc.).</p>
+</div>
+<div class="section" id="imagingskinnerbox-6-videos">
+<h2>ImagingSkinnerbox (6 videos)<a class="headerlink" href="#imagingskinnerbox-6-videos" title="Permalink to this headline">¶</a></h2>
+<p>In this setup, the pigeon behaves inside a skinnerbox, the walls of which are made of plexiglass. This allows for lots of cameras to be placed around the box that aim for detailed close-up shots (e.g., pigeons feet). By including this footage, we hope to increase the models ability to reliably recognize and differentiate the defined points of interest even when there are major occlusions in the regarded frames.<br />
+A total of six cameras is used in this setup, each filming from a different angle.</p>
+<!---add TABLE--->
+<p>As can be seen in the snapshots depicted above, all videos from this setup are rotated by 180 degrees and therefore depict the pigeon “upside down”.
+For the first training iteration, we included one video per camera angle, resulting in a total of six videos from the given experimental setup.</p>
+</div>
+<div class="section" id="hexagonalarena-6-videos">
+<h2>HexagonalArena (6 videos)<a class="headerlink" href="#hexagonalarena-6-videos" title="Permalink to this headline">¶</a></h2>
+<p>In this experiment, the pigeon is moving freely inside a hexagonal arena. The filmed space is therefore much larger than in the other two setups, resulting in larger camera-to-pigeon-distance for all camera angles.<br />
+There are six cameras mounted to the corners of the arena, each of which capturing the entire floor of the pigeon’s movement space.</p>
+<!---add TABLE--->
+<p>Due to the large camera-to-pigeon-distance, the video resolution for the pigeon itself is lower than in the other two setups, letting the pigeon appear much more “pixelated”. This might pose a special challenge for the initial training process and for the manual labeling process, but if the model training continues successful, the resulting model’s generalizability is likely to increase severely.
+As for the other setups, six videos from this experiment were used for the first training iteration – one per camera.</p>
+</div>
+<div class="section" id="video-preprocessing">
+<h2>Video Preprocessing<a class="headerlink" href="#video-preprocessing" title="Permalink to this headline">¶</a></h2>
+<p>All videos were renamed according to the following scheme:<br />
+YYYY_MM_DD_ExperimentalSetup_P007_camX_partX.MP4</p>
+<p>When filming for extended periods of time, GoPro cameras save the captured footage as multiple MP4 files, rather than as one file. Therefore, it is necessary to merge the original video files into a single MP4 file. For the regarding files, this was done using the concatenation function that is embedded in the VideoPyToolbox.<br />
+Moreover, all video files were split using the VideoPyToolbox to exclude periods at the beginning and end of the recording when the pigeon is not in the picture.<br />
+Afterwards, the resulting files were compressed by applying a common hevc compression (crf = 18), using the VideoPyToolbox.
+Having been preprocessed accordingly, the videos were added to the DeepLabCut project and frames were extracted.</p>
+<!---Definitely need to specify!--->
+</div>
+<div class="section" id="training-dataset-iteration-0">
+<h2>Training Dataset (iteration-0)<a class="headerlink" href="#training-dataset-iteration-0" title="Permalink to this headline">¶</a></h2>
+<p>For the first training iteration (iteration 0), we extracted 5 frames per video (using kmeans algorithm). This resulted in a total of 90 extracted frames.<br />
+Using the DeepLabCut labeling GUI, the extracted frames were labeled manually (see above for a list of the applied labels).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As we were having troubles launching the labeling GUI from the terminal / via jupyter notebook (there was an issue with saving the applied labels), we used the main DeepLabCut graphical user interface for this part.</p>
+</div>
+<div class="section" id="hints-tricks-for-the-labeling-process-move-to-tutorial-section">
+<h3>Hints &amp; Tricks for the Labeling Process &lt;!—MOVE TO TUTORIAL SECTION—&gt;<a class="headerlink" href="#hints-tricks-for-the-labeling-process-move-to-tutorial-section" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Directional indications („left“ / “right”) always refer to the perspective of the bird. (e.g. “RigthWingTip” = tip of the birds right wing)</p></li>
+<li><p>Note that this type of directional information is easily confused during the manual labeling process (e.g. when the bird is seen from a frontal perspective). Take extra care and make sure that you do not confuse “right” and “left” in a single frame for this would have negative implications for your training model. (You should also run the check_labels function</p></li>
+<li><p>For some labels, the exact points on the pigeons body are rarely visible (e.g. “Chin”). However, in some cases the respective labels can still be applied approximately at the correct position (e.g. when the bird is seen in a side view). In such cases, DeepLabCut will still be able to learn the correct position of the labels by averaging all occursions.</p></li>
+<li><p>Due to the physique and plumage of pigeons, many of the points to be labeled are often difficult to differentiate. (This is especially true for the shoulders and for the “MiddleThroat”). Take extra care with these respective labels and try to label the same spot in every frame.</p></li>
+</ul>
+</div>
+<div class="section" id="training-dataset-composition">
+<h3>Training Dataset Composition<a class="headerlink" href="#training-dataset-composition" title="Permalink to this headline">¶</a></h3>
+<p>After having completed the manual labeling, we ran the deeplabcut.check_labels function and double-checked all frames for any errors.</p>
+<p>Afterwards, the labeled frames’ h5-files were combined into a single training dataset using the deeplabcut.create_training_model_comparison function. We did not use the “normal” create_training_dataset function since we wanted to train three independent models based on different types of residual neural networks to compare their analysis performances.<br />
+We left the TrainingFraction parameter in the config.yaml file at the default value (0.95), which resulted in the creation of a training dataset consisting of 5 test frames and 85 training frames.</p>
+<p>Subsequently, we trained different types of residual neural networks using the same training dataset (=same training- and test-frames) for each network.<br />
+The developers of the DeepLabCut toolbox <a class="reference external" href="https://github.com/DeepLabCut/DeepLabCut/wiki/What-neural-network-should-I-use%3F-(Trade-offs,-speed-performance,-and-considerations)">recommend</a> using ResNet-50 when using DeepLabCut for lab applications. However, we still wanted to compare the different network’s results for our own data and hence trained a ResNet_50, ResNet_101 and a Resnet_152, respectively.</p>
+<p>The final composition of the training dataset consisting of 90 labeled frames for the first training iteration is summarized below:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p>StopSignalParadigm</p></th>
+<th class="head"><p>HexagonalArena</p></th>
+<th class="head"><p>ImagingSkinnerbox</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Iiteration 0</p></td>
+<td><p># sessions</p></td>
+<td><p>3</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p># pigeons</p></td>
+<td><p>3</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p># videos</p></td>
+<td><p>6</p></td>
+<td><p>6</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p># camera angles</p></td>
+<td><p>2</p></td>
+<td><p>6</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p># labeled frames</p></td>
+<td><p>30</p></td>
+<td><p>30</p></td>
+<td><p>30</p></td>
+</tr>
+<tr class="row-odd"><td><p># frames total   (iteration 0)</p></td>
+<td><p></p></td>
+<td><p>90</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./OLD_TrainingProgress"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Guillermo Hidalgo Gadea & Sarah C. Möser, IKN, Ruhr-University Bochum<br/>
+    
+        &copy; Copyright 2023.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
