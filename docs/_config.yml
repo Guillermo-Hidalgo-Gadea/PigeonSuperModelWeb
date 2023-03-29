@@ -3,12 +3,12 @@
 
 title: Pigeon Super Model
 author: Guillermo Hidalgo Gadea & Sarah C. Möser, IKN, Ruhr-University Bochum
-copyright: "2022"
+copyright: "2023"
 email: guillermo.hidalgogadea@rub.de
 logo: Figures/PigeonSuperModel.jpg
 
 # Auto-exclude files not in the toc
-only_build_toc_files: true
+only_build_toc_files: false
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html

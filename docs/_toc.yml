@@ -1,22 +1,6 @@
 format: jb-book
 root: intro
 chapters:
-- file: Dataset
-- file: Models
 - file: Tutorial
-  sections:
-  - file: DeepLabCut
-    sections:
-    - file: HowToPigeonSuperModel
-    - file: HowToPigeonSuperModelDataset
-    - file: DLC_StudentGuide
-    - file: UsingAnipose3D
-    - file: LocomotionTrackingPigeon
-  - file: SLEAP
-- url: https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel
-  title: GitLab
-- url: https://gitlab.ruhr-uni-bochum.de/ikn/pigeonsupermodel/-/releases
-  title: Releases
 - url: https://www.ruhr-uni-bochum.de/biopsy/members.html
-  title: Biopsychology Lab
-- file: GetInTouch
+  title: GetInTouch
